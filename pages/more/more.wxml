@@ -1,0 +1,27 @@
+<view class="title">设 置</view>
+<view class="container">
+  <view class="titleLine"></view>
+</view>
+<block>
+  <view class="info">我的信息</view>
+  <view class="option" bindtap="show">个人信息设置</view>
+  <view class="option" bindtap="show">隐私设置</view>
+</block>
+<view class="container">
+  <view class="divLine"></view>
+</view>
+<block>
+  <view class="info">基本设置</view>
+  <view class="option" bindtap="show">语言</view>
+  <view class="option" bindtap="show">聊天</view>
+</block>
+<view class="container">
+  <view class="divLine"></view>
+</view>
+<block>
+  <view class="info">详情</view>
+  <view class="option" bindtap="show">通知</view>
+  <view class="option" bindtap="show">帮助中心</view>
+  <view class="option" bindtap="show">关于WeShare</view>
+  <view class="option" bindtap="show">意见反馈</view>
+</block>

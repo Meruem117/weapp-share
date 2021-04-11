@@ -1,0 +1,48 @@
+/* pages/more/more.wxss */
+page{
+  background:#E6E6FA ;
+}
+
+.title{
+  color: black;
+  font-size: 45rpx;
+  font-weight: bolder;
+  position: relative;
+  left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.info{
+  color:blue;
+  font-size: 36rpx;
+  position: relative;
+  left: 20px;margin-top: 15px;
+}
+.option{
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 30px;
+  position: relative;
+  left: 20px;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+/*分割线样式*/
+.divLine{
+  background:gray ;
+  width: 90%;
+  height: 5rpx;
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+ }
+ .titleLine{
+  background:gray ;
+  width: 100%;
+  height: 8rpx;
+ }
+/*绝对居中*/
+ .Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}

@@ -1,0 +1,18 @@
+<form bindsubmit="comment">
+  <view class="c">
+    <view class="input">
+      <input class="in" type="text" name="content" placeholder="评论..."></input>
+    </view>
+    <view class="blank"></view>
+    <view class="bt">
+      <button class="submit" form-type="submit" type="primary">评 论</button>
+    </view>
+    <view class="imgs">
+      <image src="../../icon/voice.png" class="imgs_voice"></image>
+      <image src="../../icon/picture.png" class="imgs_picture"></image>
+      <image src="../../icon/camera.png" class="imgs_camera"></image>
+      <image src="../../icon/face.png" class="imgs_face"></image>
+      <image src="../../icon/add.png" class="imgs_add"></image>
+    </view>
+  </view>
+</form>

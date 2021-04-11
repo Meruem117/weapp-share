@@ -1,0 +1,48 @@
+<form bindsubmit="publish">
+  <view class="p">
+    <view class="input">
+      <input class="in" type="text" name="content" placeholder="记录..."></input>
+    </view>
+    <view class="blank"></view>
+    <view class="imgs">
+      <!-- voice -->
+      <block wx:if="{{i1==false}}">
+        <image src="../../icon/voice.png" class="imgs_voice" bindtap="toClick" data-i="voice"></image>
+      </block>
+      <block wx:if="{{i1==true}}">
+        <image src="../../icon/voice_.png" class="imgs_voice" bindtap="toClick" data-i="voice"></image>
+      </block>
+      <!-- picture -->
+      <block wx:if="{{i2==false}}">
+        <image src="../../icon/picture.png" class="imgs_picture" bindtap="toClick" data-i="picture"></image>
+      </block>
+      <block wx:if="{{i2==true}}">
+        <image src="../../icon/picture_.png" class="imgs_picture" bindtap="toClick" data-i="picture"></image>
+      </block>
+      <!-- camera -->
+      <block wx:if="{{i3==false}}">
+        <image src="../../icon/camera.png" class="imgs_camera" bindtap="toClick" data-i="camera"></image>
+      </block>
+      <block wx:if="{{i3==true}}">
+        <image src="../../icon/camera_.png" class="imgs_camera" bindtap="toClick" data-i="camera"></image>
+      </block>
+      <!-- emoji -->
+      <block wx:if="{{i4==false}}">
+        <image src="../../icon/face.png" class="imgs_face" bindtap="toClick" data-i="face"></image>
+      </block>
+      <block wx:if="{{i4==true}}">
+        <image src="../../icon/face_.png" class="imgs_face" bindtap="toClick" data-i="face"></image>
+      </block>
+      <!-- add -->
+      <block wx:if="{{i5==false}}">
+        <image src="../../icon/add.png" class="imgs_add" bindtap="toClick" data-i="add"></image>
+      </block>
+      <block wx:if="{{i5==true}}">
+        <image src="../../icon/add_.png" class="imgs_add" bindtap="toClick" data-i="add"></image>
+      </block>
+    </view>
+    <view class="bt">
+      <button class="submit" form-type="submit" type="primary">记 录</button>
+    </view>
+  </view>
+</form>

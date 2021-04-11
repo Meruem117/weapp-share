@@ -1,0 +1,65 @@
+<block wx:for="{{user}}" wx:for-item="u" wx:if="{{u.user_id==uid}}">
+  <view class="user">
+    <a>
+      <view class="user_img">
+        <image src="{{u.user_img}}"></image>
+      </view>
+      <block wx:if="{{u.gender=='female'}}">
+        <text class="user_name iconfont icon-female">{{u.user_name}}</text>
+      </block>
+      <block wx:if="{{u.gender=='male'}}">
+        <text class="user_name iconfont icon-male">{{u.user_name}}</text>
+      </block>
+      <image src="../../icon/message.png" class="img_message" bindtap="toMessage" data-id="{{u.user_id}}" data-name="{{u.user_name}}"></image>
+      <view class="user_from">
+        <text>{{u.city}} , {{u.country}}</text>
+      </view>
+      <view class="user_intro">
+        <text>{{u.introduction}}</text>
+      </view>
+      <view class="user_action">
+        <text>{{u.total}}  Shares</text>
+      </view>
+    </a>
+  </view>
+</block>
+
+
+<block wx:for="{{feed}}" wx:for-item="item">
+  <block wx:if="{{item.user_id==uid}}">
+    <view class="plus_item">
+
+      <view class="plus_content" cid="{{item.info_id}}">
+        <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
+
+        <view class="plus_action">
+          <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.good_num}}">
+            <block wx:if="{{item.islike == false}}">
+              <image src="../../icon/like.png" class="img1"></image>
+            </block>
+            <block wx:elif="{{item.islike == true}}">
+              <image src="../../icon/like_.png" class="img1"></image>
+            </block>
+          </view>
+          <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
+            <image src="../../icon/comment.png" class="img2"></image>
+          </view>
+          <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
+            <block wx:if="{{item.iscollect == false}}">
+              <image src="../../icon/collect.png" class="img4"></image>
+            </block>
+            <block wx:if="{{item.iscollect == true}}">
+              <image src="../../icon/collect_.png" class="img4"></image>
+            </block>
+          </view>
+        </view>
+      </view>
+
+      <view class="plus_num">
+        <view class="plus_like">{{item.good_num}}</view>
+        <view class="plus_comment">{{item.comment_num}}</view>
+      </view>
+
+    </view>
+  </block>
+</block>

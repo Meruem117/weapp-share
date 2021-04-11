@@ -1,0 +1,125 @@
+view{
+  /* 使用 主题颜色 */
+  color:var(#000);
+}
+page{
+  background: #E6E6FA;
+  height: 100%;
+}
+
+.plus{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.block_item{
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus_item{
+  width: 98%;
+  padding: 30rpx 30rpx 20rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+}
+
+.plus_user{
+  height: 45rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  left:0;
+}
+
+.plus_user a{
+  display: inline-block;
+  height: 40rpx;
+}
+
+.plus_img{
+  position: relative;
+  display: inline-block;
+}
+
+.plus_img image{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+}
+
+.plus_user text{
+  margin-left: 20rpx;
+}
+
+.plus_content{
+  margin-left: 90rpx;
+  font-size: 35rpx;
+  margin-top: 60rpx;
+}
+
+/* .plus_action view{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  margin-top: 25rpx;
+  font-size: 24rpx;
+  color: #a0acac;
+} */
+
+.plus_action image{
+  margin-top: 40rpx;
+  display: inline-block;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.plus_action .img2{
+  margin-left: 50rpx;
+}
+
+.plus_action .img3{
+  margin-left: 50rpx;
+}
+
+.plus_action .img4{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 380rpx;
+}
+
+.plus_action view{
+  display: inline-block;
+}
+
+.plus_num{
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-top: 10rpx;
+  margin-left: 88rpx;
+  font-size: 30rpx;
+  color: #a0acac;
+}
+
+.plus_like{
+  display: inline;
+  margin-left: 12rpx;
+}
+.plus_comment{
+  display: inline;
+  margin-left: 70rpx;
+}

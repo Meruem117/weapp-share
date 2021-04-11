@@ -1,0 +1,100 @@
+<view>
+  <image class="bg" src="../../images/bg.jpg" mode="aspectFill"></image>
+</view>
+
+<view class="title">
+  {{name}}
+</view>
+<block wx:for="{{feed}}" wx:for-item="item" wx:if="{{item.id==id}}">
+  <block wx:if="{{item.user_id==0}}">
+    <view class="msg_item_right">
+      <view class="user">
+        <view class="user_content">
+          <view class="user_text_right">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+        <view class="user_img_right" bindtap="toMine">
+          <image src="{{item.user_img}}"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="msg_item">
+      <view class="user">
+        <view class="user_img" bindtap="toUser" data-uid="{{item.user_id}}">
+          <image src="{{item.user_img}}"></image>
+        </view>
+        <view class="user_content">
+          <view class="user_text">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</block>
+
+<view class="reply_item" wx:for="{{reply}}" wx:for-item="r">
+      <view class="reply_user">
+        <view class="reply_user_content">
+          <view class="reply_user_text">
+            <text>{{r.content}}</text>
+          </view>
+        </view>
+        <view class="reply_user_img" bindtap="toMine">
+          <image src="{{r.user_img}}"></image>
+        </view>
+      </view>
+    </view>
+
+
+<form bindsubmit="reply">
+  <view class="msg_input">
+    <input class="input_content" name="content" value="{{inputValue}}"></input>
+    <view class="bt">
+      <button class="submit" form-type="submit" type="default" 
+        style="width:110rpx;height:50rpx;line-height:40rpx;font-size:26rpx;border-radius:15rpx;background-color:#07c160;color:white;padding:5rpx;right:0;margin-right:12rpx;margin-left:12rpx">
+        发送
+      </button>
+    </view>
+    <view class="imgs">
+      <!-- voice -->
+      <block wx:if="{{i1==false}}">
+        <image src="../../icon/voice.png" class="imgs_voice" bindtap="toClick" data-i="voice"></image>
+      </block>
+      <block wx:if="{{i1==true}}">
+        <image src="../../icon/voice_.png" class="imgs_voice" bindtap="toClick" data-i="voice"></image>
+      </block>
+      <!-- picture -->
+      <block wx:if="{{i2==false}}">
+        <image src="../../icon/picture.png" class="imgs_picture" bindtap="toClick" data-i="picture"></image>
+      </block>
+      <block wx:if="{{i2==true}}">
+        <image src="../../icon/picture_.png" class="imgs_picture" bindtap="toClick" data-i="picture"></image>
+      </block>
+      <!-- camera -->
+      <block wx:if="{{i3==false}}">
+        <image src="../../icon/camera.png" class="imgs_camera" bindtap="toClick" data-i="camera"></image>
+      </block>
+      <block wx:if="{{i3==true}}">
+        <image src="../../icon/camera_.png" class="imgs_camera" bindtap="toClick" data-i="camera"></image>
+      </block>
+      <!-- emoji -->
+      <block wx:if="{{i4==false}}">
+        <image src="../../icon/face.png" class="imgs_face" bindtap="toClick" data-i="face"></image>
+      </block>
+      <block wx:if="{{i4==true}}">
+        <image src="../../icon/face_.png" class="imgs_face" bindtap="toClick" data-i="face"></image>
+      </block>
+      <!-- add -->
+      <block wx:if="{{i5==false}}">
+        <image src="../../icon/add.png" class="imgs_add" bindtap="toClick" data-i="add"></image>
+      </block>
+      <block wx:if="{{i5==true}}">
+        <image src="../../icon/add_.png" class="imgs_add" bindtap="toClick" data-i="add"></image>
+      </block>
+    </view>
+  </view>
+</form>
