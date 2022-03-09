@@ -1,5 +1,5 @@
 // pages/detail/detail.js
-var util = require('../../utils/util.js')
+const util = require('../../utils/util.js')
 
 Page({
   data: {
