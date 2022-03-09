@@ -1,37 +1,37 @@
-page{
+page {
   background: #E6E6FA;
   height: 100%;
 }
 
-.nvinput{
+.nvinput {
   background: #ffffff;
   border-radius: 25rpx;
 }
 
-.input{
+.input {
   height: 80rpx;
   padding: 10rpx;
   display: flex;
   border-radius: 10%;
 }
 
-.input .in{
+.input .in {
   width: 100%;
   height: 100%;
 }
 
-.bt{
+.bt {
   margin-top: 50rpx;
   margin-bottom: 0;
 }
 
-.bt .submit{
+.bt .submit {
   font-size: 30rpx;
   width: 100%;
   border-radius: 15rpx;
 }
 
-.plus_item{
+.plus_item {
   width: 98%;
   padding: 30rpx 30rpx 20rpx;
   margin: 7rpx 0 6rpx 0;
@@ -43,24 +43,24 @@ page{
   margin-top: 20rpx;
 }
 
-.plus_user{
+.plus_user {
   height: 45rpx;
   font-size: 35rpx;
   font-weight: bold;
-  left:0;
+  left: 0;
 }
 
-.plus_user a{
+.plus_user a {
   display: inline-block;
   height: 40rpx;
 }
 
-.plus_img{
+.plus_img {
   position: relative;
   display: inline-block;
 }
 
-.plus_img image{
+.plus_img image {
   display: inline-block;
   width: 80rpx;
   height: 80rpx;
@@ -69,49 +69,49 @@ page{
   vertical-align: middle;
 }
 
-.plus_user text{
+.plus_user text {
   margin-left: 20rpx;
 }
 
-.img_delete{
+.img_delete {
   margin-left: 415rpx;
   display: inline-block;
   width: 35rpx;
   height: 35rpx;
 }
 
-.plus_content{
+.plus_content {
   margin-left: 90rpx;
   font-size: 35rpx;
   margin-top: 60rpx;
 }
 
-.plus_action image{
+.plus_action image {
   margin-top: 40rpx;
   display: inline-block;
   width: 48rpx;
   height: 48rpx;
 }
 
-.plus_action .img2{
+.plus_action .img2 {
   margin-left: 50rpx;
 }
 
-.plus_action .img3{
+.plus_action .img3 {
   margin-left: 50rpx;
 }
 
-.plus_action .img4{
+.plus_action .img4 {
   height: 50rpx;
   width: 50rpx;
   margin-left: 380rpx;
 }
 
-.plus_action view{
+.plus_action view {
   display: inline-block;
 }
 
-.plus_num{
+.plus_num {
   display: inline-block;
   vertical-align: text-bottom;
   margin-top: 15rpx;
@@ -120,11 +120,12 @@ page{
   color: #a0acac;
 }
 
-.plus_like{
+.plus_like {
   display: inline;
   margin-left: 15rpx;
 }
-.plus_comment{
+
+.plus_comment {
   display: inline;
   margin-left: 85rpx;
 }

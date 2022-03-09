@@ -1,8 +1,6 @@
 # wechat_miniprogram_share
 A wechat mini program about sharing(first wechat mini porgram)
 
-**第一次写，写的不好还请见谅:worried::pray::pray:**
-
 # SHARE
 ### 一、首页
 #### 1. 首页

@@ -1,12 +1,12 @@
-export const request=(params)=>{
-  return new Promise((resolve,reject)=>{
+export const request = (params) => {
+  return new Promise((resolve, reject) => {
     wx.request({
       ...params,
-      success:(result)=>{
-        resolve(result);
+      success: res => {
+        resolve(res)
       },
-      fail:(err)=>{
-        reject(err);
+      fail: err => {
+        reject(err)
       }
     })
   })

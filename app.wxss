@@ -1,16 +1,22 @@
 @import "./styles/iconfont.wxss";
-page,view,text,swiper,swoper-item,navigator{
+
+page,
+view,
+text,
+swiper,
+swoper-item,
+navigator {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 /*  主题颜色  */
-page{
+page {
   /* 定义 主题颜色 */
-  --themeColor:	#8B008B;
-  --themeColor-day:	#E6E6FA;
-  --themeColor-night:	#4169E1;
+  --themeColor: #8B008B;
+  --themeColor-day: #E6E6FA;
+  --themeColor-night: #4169E1;
   /* 定义 字体大小 */
   font-size: 32rpx;
 }

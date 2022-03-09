@@ -18,7 +18,7 @@
         <text>{{u.introduction}}</text>
       </view>
       <view class="user_action">
-        <text>{{u.total}}  Shares</text>
+        <text>{{u.total}} Shares</text>
       </view>
     </a>
   </view>

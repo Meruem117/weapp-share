@@ -1,4 +1,4 @@
-//logs.js
+// pages/log/logs.js
 const util = require('../../utils/util.js')
 
 Page({

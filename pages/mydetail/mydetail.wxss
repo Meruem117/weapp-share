@@ -1,8 +1,8 @@
-page{
+page {
   background: #E6E6FA;
 }
 
-.user_item{
+.user_item {
   width: 100%;
   padding: 30rpx 30rpx 20rpx;
   margin: 7rpx 0 6rpx 0;
@@ -13,24 +13,24 @@ page{
   margin-top: 20rpx;
 }
 
-.user{
+.user {
   height: 50rpx;
   font-size: 38rpx;
   font-weight: bold;
-  left:0;
+  left: 0;
 }
 
-.user a{
+.user a {
   display: inline-block;
   height: 40rpx;
 }
 
-.user_img{
+.user_img {
   position: relative;
   display: inline-block;
 }
 
-.user_img image{
+.user_img image {
   display: inline-block;
   width: 80rpx;
   height: 80rpx;
@@ -39,11 +39,11 @@ page{
   vertical-align: middle;
 }
 
-.user text{
+.user text {
   margin-left: 20rpx;
 }
 
-.user_content{
+.user_content {
   margin-left: 90rpx;
   font-size: 35rpx;
   margin-top: 60rpx;
@@ -51,7 +51,7 @@ page{
 
 
 
-.comment_item{
+.comment_item {
   width: 100%;
   padding: 30rpx 30rpx 20rpx;
   margin: 0 0 5rpx 0;
@@ -61,25 +61,25 @@ page{
   box-shadow: 0 2px 5px #eeeeee;
 }
 
-.comment_user{
+.comment_user {
   margin-left: 15%;
   height: 30rpx;
   font-size: 30rpx;
   font-weight: bold;
-  left:0;
+  left: 0;
 }
 
-.comment_user a{
+.comment_user a {
   display: inline-block;
   height: 30rpx;
 }
 
-.comment_img{
+.comment_img {
   position: relative;
   display: inline-block;
 }
 
-.comment_img image{
+.comment_img image {
   display: inline-block;
   width: 60rpx;
   height: 60rpx;
@@ -88,34 +88,37 @@ page{
   vertical-align: middle;
 }
 
-.comment_user text{
+.comment_user text {
   margin-left: 20rpx;
 }
 
-.comment_content{
+.comment_content {
   margin-left: 26%;
   font-size: 30rpx;
   margin-top: 40rpx;
 }
-.comment_action view{
+
+.comment_action view {
   display: inline-block;
   vertical-align: text-bottom;
   padding: 0 10rpx 0 0;
   font-size: 24rpx;
   color: #a0acac;
 }
-.comment_action image{
+
+.comment_action image {
   margin-top: 25rpx;
   display: inline-block;
   width: 35rpx;
   height: 35rpx;
 }
-.comment_action .img2{
+
+.comment_action .img2 {
   margin-left: 50rpx;
 }
 
 
-.comment_num{
+.comment_num {
   display: inline-block;
   vertical-align: text-bottom;
   padding: 0 10rpx 0 0;
@@ -123,11 +126,13 @@ page{
   font-size: 30rpx;
   color: #a0acac;
 }
-.comment_num_like{
+
+.comment_num_like {
   display: inline-block;
   margin-left: 9rpx;
 }
-.comment_num_comment{
+
+.comment_num_comment {
   display: inline-block;
   margin-left: 73rpx;
 }
@@ -135,54 +140,60 @@ page{
 
 
 
-.plus_action image{
+.plus_action image {
   margin-top: 40rpx;
   display: inline-block;
   width: 48rpx;
   height: 48rpx;
 }
-.plus_action .img2{
+
+.plus_action .img2 {
   margin-left: 50rpx;
 }
-.plus_action .img3{
+
+.plus_action .img3 {
   margin-left: 380rpx;
 }
-.plus_action view{
+
+.plus_action view {
   display: inline-block;
 }
-.plus_num{
+
+.plus_num {
   display: inline-block;
   vertical-align: text-bottom;
   margin-top: 15rpx;
   font-size: 30rpx;
   color: #a0acac;
 }
-.plus_like{
+
+.plus_like {
   display: inline;
   margin-left: 15rpx;
 }
-.plus_comment{
+
+.plus_comment {
   display: inline;
   margin-left: 75rpx;
 }
 
-.img-delete{
+.img-delete {
   display: inline-block;
   width: 35rpx;
   height: 35rpx;
   margin-left: 350rpx;
 }
 
-.cmt-reply{
+.cmt-reply {
   font-size: 30rpx;
   color: gray;
 }
 
-.cmt-reply-to{
+.cmt-reply-to {
   color: #4169E1;
 }
 
-.msg_input{
+.msg_input {
   background: #E6E6FA;
   width: 100%;
   height: 160rpx;
@@ -190,7 +201,7 @@ page{
   position: absolute;
 }
 
-.input_content{
+.input_content {
   width: 80%;
   height: 55rpx;
   overflow: hidden;
@@ -201,31 +212,37 @@ page{
   display: inline-block;
 }
 
-.bt{
+.bt {
   display: inline-block;
 }
 
-.imgs{
+.imgs {
   margin-top: 15rpx;
   margin-left: 15rpx;
 }
-.imgs image{
+
+.imgs image {
   display: inline-block;
   height: 40rpx;
   width: 40rpx;
 }
-.imgs_voice{
-  margin-left: 38rpx; 
+
+.imgs_voice {
+  margin-left: 38rpx;
 }
-.imgs_picture{
-  margin-left: 15%; 
-}
-.imgs_camera{
+
+.imgs_picture {
   margin-left: 15%;
 }
-.imgs_face{
+
+.imgs_camera {
   margin-left: 15%;
 }
-.imgs_add{
+
+.imgs_face {
+  margin-left: 15%;
+}
+
+.imgs_add {
   margin-left: 15%;
 }

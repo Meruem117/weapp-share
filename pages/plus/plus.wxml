@@ -46,7 +46,7 @@
       <view class="plus_like">{{p.good_num}}</view>
       <view class="plus_comment">{{p.comment_num}}</view>
     </view>
-    
+
   </view>
 </block>
 
@@ -79,7 +79,7 @@
         <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
           <image src="../../icon/comment.png" class="img2"></image>
         </view>
-        
+
         <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
           <block wx:if="{{item.iscollect == false}}">
             <image src="../../icon/collect.png" class="img3"></image>

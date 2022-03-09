@@ -156,8 +156,7 @@
   <view class="msg_input">
     <input class="input_content" name="content" focus="{{focus}}" value="{{inputValue}}"></input>
     <view class="bt">
-      <button class="submit" form-type="submit" type="default" 
-        style="width:110rpx;height:50rpx;line-height:40rpx;font-size:26rpx;border-radius:15rpx;background-color:#07c160;color:white;padding:5rpx;right:0;margin-right:12rpx;margin-left:12rpx">
+      <button class="submit" form-type="submit" type="default" style="width:110rpx;height:50rpx;line-height:40rpx;font-size:26rpx;border-radius:15rpx;background-color:#07c160;color:white;padding:5rpx;right:0;margin-right:12rpx;margin-left:12rpx">
         评论
       </button>
     </view>

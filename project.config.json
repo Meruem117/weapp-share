@@ -21,26 +21,30 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "useIsolateContext": true,
-    "useCompilerModule": false,
-    "userConfirmedUseCompilerModuleSwitch": false,
+    "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
-    "bundle": false
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
   "appid": "wxff724114cb9cc5f3",
-  "projectname": "saleshare",
+  "projectname": "miniprogram-start",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -59,8 +63,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
+      "list": [{
           "id": 0,
           "name": "pages/index/index",
           "pathName": "pages/index/index",

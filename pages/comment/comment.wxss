@@ -1,66 +1,66 @@
-page{
+page {
   height: 100%;
   background: #E6E6FA;
 }
 
-.c{
+.c {
   background: #ffffff;
 }
 
-.input{
+.input {
   height: 100rpx;
   padding: 10rpx;
   display: flex;
   border-radius: 10%;
 }
 
-.input .in{
+.input .in {
   width: 100%;
   height: 100%;
 }
 
-.bt{
+.bt {
   margin-top: 50rpx;
   margin-bottom: 0;
 }
 
-.bt .submit{
+.bt .submit {
   font-size: 30rpx;
   width: 100%;
   border-radius: 15rpx;
 }
 
-.blank{
+.blank {
   height: 100rpx;
 }
 
-.imgs{
+.imgs {
   margin-top: 15rpx;
   margin-left: 15rpx;
 }
 
-.imgs image{
+.imgs image {
   display: inline-block;
   height: 40rpx;
   width: 40rpx;
 }
 
-.imgs_voice{
-  margin-left: 38rpx; 
+.imgs_voice {
+  margin-left: 38rpx;
 }
 
-.imgs_picture{
-  margin-left: 15%; 
-}
-
-.imgs_camera{
+.imgs_picture {
   margin-left: 15%;
 }
 
-.imgs_face{
+.imgs_camera {
   margin-left: 15%;
 }
 
-.imgs_add{
+.imgs_face {
+  margin-left: 15%;
+}
+
+.imgs_add {
   margin-left: 15%;
 }

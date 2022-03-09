@@ -77,85 +77,82 @@
 
       <!-- sub-comment -->
       <view class="sub_comment_item" wx:for="{{item2.children}}" wx:for-item="sub_item">
-      <view class="sub_comment_user">
-        <a>
-          <view class="sub_comment_img" bindtap="toUser" data-uid="{{sub_item.f_user_id}}">
-            <image src="{{sub_item.f_user_img}}"></image>
-          </view>
-          <text>{{sub_item.f_user_name}}</text>
-          <view class="cmt_reply" bindtap="toUser" data-uid="{{sub_item.t_user_id}}">
-            <text class="cmt-reply">回复</text>
-            <text class="cmt-reply-to">@{{sub_item.t_user_name}}</text>
-          </view>
-        </a>
-      </view>
-
-      <view class="sub_comment_content">
-        <text>{{sub_item.comment}}</text>
-        <view class="sub_comment_action">
-          <view bindtap="sublike" data-subl="{{sub_item.f_islike}}" data-subn="{{sub_item.f_good_num}}" data-idc="{{item2.c_comment_id}}" data-subid="{{sub_item.f_comment_id}}">
-            <block wx:if="{{sub_item.f_islike == false}}">
-              <image src="../../icon/like.png" class="img1"></image>
-            </block>
-            <block wx:elif="{{sub_item.f_islike == true}}">
-              <image src="../../icon/like_.png" class="img1"></image>
-            </block>
-          </view>
-          <view bindtap="toComment" data-tp="cmt" data-u="{{sub_item.f_user_name}}" data-uid="{{sub_item.f_user_id}}" data-cmt_id="{{item2.c_comment_id}}">
-            <image src="../../icon/comment.png" class="img2"></image>
-          </view>
-
+        <view class="sub_comment_user">
+          <a>
+            <view class="sub_comment_img" bindtap="toUser" data-uid="{{sub_item.f_user_id}}">
+              <image src="{{sub_item.f_user_img}}"></image>
+            </view>
+            <text>{{sub_item.f_user_name}}</text>
+            <view class="cmt_reply" bindtap="toUser" data-uid="{{sub_item.t_user_id}}">
+              <text class="cmt-reply">回复</text>
+              <text class="cmt-reply-to">@{{sub_item.t_user_name}}</text>
+            </view>
+          </a>
         </view>
-        <view class="sub_comment_num">
-          <view class="sub_comment_num_like">{{sub_item.f_good_num}}</view>
-          <view class="sub_comment_num_comment">{{sub_item.f_comment_num}}</view>
+
+        <view class="sub_comment_content">
+          <text>{{sub_item.comment}}</text>
+          <view class="sub_comment_action">
+            <view bindtap="sublike" data-subl="{{sub_item.f_islike}}" data-subn="{{sub_item.f_good_num}}" data-idc="{{item2.c_comment_id}}" data-subid="{{sub_item.f_comment_id}}">
+              <block wx:if="{{sub_item.f_islike == false}}">
+                <image src="../../icon/like.png" class="img1"></image>
+              </block>
+              <block wx:elif="{{sub_item.f_islike == true}}">
+                <image src="../../icon/like_.png" class="img1"></image>
+              </block>
+            </view>
+            <view bindtap="toComment" data-tp="cmt" data-u="{{sub_item.f_user_name}}" data-uid="{{sub_item.f_user_id}}" data-cmt_id="{{item2.c_comment_id}}">
+              <image src="../../icon/comment.png" class="img2"></image>
+            </view>
+
+          </view>
+          <view class="sub_comment_num">
+            <view class="sub_comment_num_like">{{sub_item.f_good_num}}</view>
+            <view class="sub_comment_num_comment">{{sub_item.f_comment_num}}</view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- cmt-comment -->
+      <view class="sub_comment_item" wx:for="{{cmt}}" wx:for-item="cmt" wx:if="{{cmt.show==true && cmt.cmt_id==item2.c_comment_id}}">
+        <view class="sub_comment_user">
+          <a>
+            <view class="sub_comment_img" bindtap="toMine">
+              <image src="{{cmt.c_user_img}}"></image>
+            </view>
+            <text>{{cmt.c_user_name}}</text>
+            <view class="cmt_reply" bindtap="toUser" data-uid="{{cmt.to_user_id}}">
+              <text class="cmt-reply">回复</text>
+              <text class="cmt-reply-to">@{{cmt.to_user}}</text>
+            </view>
+          </a>
+        </view>
+
+        <view class="sub_comment_content">
+          <text>{{cmt.comment}}</text>
+          <view class="sub_comment_action">
+            <view bindtap="cmtlike" data-cmtl="{{cmt.c_islike}}" data-cmtn="{{cmt.c_good_num}}">
+              <block wx:if="{{cmt.c_islike == false}}">
+                <image src="../../icon/like.png" class="img1"></image>
+              </block>
+              <block wx:elif="{{cmt.c_islike == true}}">
+                <image src="../../icon/like_.png" class="img1"></image>
+              </block>
+            </view>
+            <view bindtap="toComment">
+              <image src="../../icon/comment.png" class="img2"></image>
+            </view>
+          </view>
+          <view class="sub_comment_num">
+            <view class="sub_comment_num_like">{{cmt.c_good_num}}</view>
+            <view class="sub_comment_num_comment">{{cmt.c_comment_num}}</view>
+          </view>
+          <image src="../../icon/bin.png" class="sub_img-delete" bindtap="cmtdelete" data-show="{{cmt.show}}"></image>
         </view>
       </view>
-
-      </view>
-
-    <!-- cmt-comment -->
-    <view class="sub_comment_item" wx:for="{{cmt}}" wx:for-item="cmt" wx:if="{{cmt.show==true && cmt.cmt_id==item2.c_comment_id}}">
-      <view class="sub_comment_user" >
-        <a>
-          <view class="sub_comment_img" bindtap="toMine">
-            <image src="{{cmt.c_user_img}}"></image>
-          </view>
-          <text>{{cmt.c_user_name}}</text>
-          <view class="cmt_reply" bindtap="toUser" data-uid="{{cmt.to_user_id}}">
-            <text class="cmt-reply">回复</text>
-            <text class="cmt-reply-to">@{{cmt.to_user}}</text>
-          </view>
-        </a>
-      </view>
-
-      <view class="sub_comment_content">
-        <text>{{cmt.comment}}</text>
-        <view class="sub_comment_action">
-          <view bindtap="cmtlike" data-cmtl="{{cmt.c_islike}}" data-cmtn="{{cmt.c_good_num}}">
-            <block wx:if="{{cmt.c_islike == false}}">
-              <image src="../../icon/like.png" class="img1"></image>
-            </block>
-            <block wx:elif="{{cmt.c_islike == true}}">
-              <image src="../../icon/like_.png" class="img1"></image>
-            </block>
-          </view>
-          <view bindtap="toComment">
-            <image src="../../icon/comment.png" class="img2"></image>
-          </view>
-
-        </view>
-        <view class="sub_comment_num">
-          <view class="sub_comment_num_like">{{cmt.c_good_num}}</view>
-          <view class="sub_comment_num_comment">{{cmt.c_comment_num}}</view>
-        </view>
-        <image src="../../icon/bin.png" class="sub_img-delete" bindtap="cmtdelete" data-show="{{cmt.show}}"></image>
-      </view>
-
     </view>
 
-    </view>
-  
 
     <!-- msg-comment -->
     <view class="comment_item" wx:for="{{msg}}" wx:for-item="msg" wx:if="{{msg.show==true}}">
@@ -200,8 +197,7 @@
   <view class="msg_input">
     <input class="input_content" name="content" focus="{{focus}}" value="{{inputValue}}"></input>
     <view class="bt">
-      <button class="submit" form-type="submit" type="default" 
-        style="width:110rpx;height:50rpx;line-height:40rpx;font-size:26rpx;border-radius:15rpx;background-color:#07c160;color:white;padding:5rpx;right:0;margin-right:12rpx;margin-left:12rpx">
+      <button class="submit" form-type="submit" type="default" style="width:110rpx;height:50rpx;line-height:40rpx;font-size:26rpx;border-radius:15rpx;background-color:#07c160;color:white;padding:5rpx;right:0;margin-right:12rpx;margin-left:12rpx">
         评论
       </button>
     </view>

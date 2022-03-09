@@ -1,6 +1,6 @@
-// pages/detail/detail.js
-var util = require('../../utils/util.js')
-var app = getApp()
+// pages/user/user.js
+const util = require('../../utils/util.js')
+
 Page({
   data: {
     feed: [],
@@ -74,11 +74,11 @@ Page({
   //     url: '../comment/comment'
   //   })
   // },
-  toComment:function(e){
+  toComment: function (e) {
     let tp = e.currentTarget.dataset.tp;
     let aid = e.currentTarget.dataset.cid;
     wx.navigateTo({
-      url: '../detail/detail?tp='+tp+'&cid='+aid
+      url: '../detail/detail?tp=' + tp + '&cid=' + aid
     })
   },
   bindContentTap: function (cid) {

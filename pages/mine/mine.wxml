@@ -13,119 +13,118 @@
         <text>{{u.introduction}}</text>
       </view>
       <view class="user_action">
-        <text>{{u.total}}  Shares</text>
+        <text>{{u.total}} Shares</text>
       </view>
     </a>
-    </view>
-    </block>
-    
-    <Tabs tabs="{{tabs}}" binditemChange="handleItemChange" class="tabs"></Tabs>
-    <block wx:for="{{tabs}}" wx:for-item="t">
-      <block wx:if="{{t.isActive==1}}">
-        <!-- 分享 -->
-        <block wx:if="{{t.id==0}}">
+  </view>
+</block>
 
-          <block wx:for="{{feed}}" wx:for-item="item" wx:if="{{item.show==true}}">
-            <view class="plus_item">
-              <view class="plus_content" cid="{{item.info_id}}">
-                <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
-                <view class="plus_action">
-                  <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}"
-                    data-num="{{item.good_num}}">
-                    <block wx:if="{{item.islike == false}}">
-                      <image src="../../icon/like.png" class="img1"></image>
-                    </block>
-                    <block wx:elif="{{item.islike == true}}">
-                      <image src="../../icon/like_.png" class="img1"></image>
-                    </block>
-                  </view>
-                  <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
-                    <image src="../../icon/comment.png" class="img2"></image>
-                  </view>
-                  <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
-                    <block wx:if="{{item.iscollect == false}}">
-                      <image src="../../icon/collect.png" class="img3"></image>
-                    </block>
-                    <block wx:if="{{item.iscollect == true}}">
-                      <image src="../../icon/collect_.png" class="img3"></image>
-                    </block>
-                  </view>
-                  </view>
-                  </view>
-              <view class="plus_num">
-                <view class="plus_like">{{item.good_num}}</view>
-                <view class="plus_comment">{{item.comment_num}}</view>
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange" class="tabs"></Tabs>
+<block wx:for="{{tabs}}" wx:for-item="t">
+  <block wx:if="{{t.isActive==1}}">
+    <!-- 分享 -->
+    <block wx:if="{{t.id==0}}">
+
+      <block wx:for="{{feed}}" wx:for-item="item" wx:if="{{item.show==true}}">
+        <view class="plus_item">
+          <view class="plus_content" cid="{{item.info_id}}">
+            <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
+            <view class="plus_action">
+              <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.good_num}}">
+                <block wx:if="{{item.islike == false}}">
+                  <image src="../../icon/like.png" class="img1"></image>
+                </block>
+                <block wx:elif="{{item.islike == true}}">
+                  <image src="../../icon/like_.png" class="img1"></image>
+                </block>
               </view>
-              <image src="../../icon/bin.png" class="img4" bindtap="delete" data-show="{{item.show}}" data-sid="{{item.info_id}}"></image>
+              <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
+                <image src="../../icon/comment.png" class="img2"></image>
+              </view>
+              <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
+                <block wx:if="{{item.iscollect == false}}">
+                  <image src="../../icon/collect.png" class="img3"></image>
+                </block>
+                <block wx:if="{{item.iscollect == true}}">
+                  <image src="../../icon/collect_.png" class="img3"></image>
+                </block>
+              </view>
             </view>
-          </block>
-
-        </block>
-
-        <!-- 记录 -->
-        <block wx:if="{{t.id==1}}">
-
-          <view class="record_input">
-            <navigator url="/pages/record/record" open-type="navigate">记录</navigator>
           </view>
-          
-          <block wx:for="{{moreRecord}}" wx:for-item="mr" wx:if="{{mr.show==true}}">
-            <view class="record_item">
-              <view class="record_time">
-                {{mr.time}}
-              </view>
-              <view class="record_content" cid="{{mr.record_id}}">
-                <text> {{mr.content}}</text>
-              </view>
-              <image src="../../icon/bin.png" class="record_img" bindtap="deleteMRecord" data-show="{{mr.show}}"></image>
-            </view>
-          </block>
+          <view class="plus_num">
+            <view class="plus_like">{{item.good_num}}</view>
+            <view class="plus_comment">{{item.comment_num}}</view>
+          </view>
+          <image src="../../icon/bin.png" class="img4" bindtap="delete" data-show="{{item.show}}" data-sid="{{item.info_id}}"></image>
+        </view>
+      </block>
 
-          <block wx:for="{{record}}" wx:for-item="r" wx:if="{{r.show==true}}">
-            <view class="record_item">
-              <view class="record_time">
-                {{r.time}}
-              </view>
-              <view class="record_content" cid="{{r.record_id}}">
-                <text> {{r.content}}</text>
-              </view>
-              <image src="../../icon/bin.png" class="record_img" bindtap="deleteRecord" data-show="{{r.show}}" data-sid="{{r.record_id}}"></image>
-            </view>
-          </block>
+    </block>
 
-        </block>
+    <!-- 记录 -->
+    <block wx:if="{{t.id==1}}">
 
-        <!-- 私信 -->
-        <block wx:if="{{t.id==2}}">
-          <block wx:for="{{message}}" wx:for-item="m" wx:if="{{m.islast==true}}">
-            <view class="msg_item">
-              <view class="msg_user">
-                <block wx:if="{{m.user_id==0}}">
-                  <view class="msg_user_img" bindtap="toUser" data-uid="{{m.to_user_id}}">
-                    <image src="{{m.to_user_img}}"></image>
-                    <text class="msg_user_name">{{m.to_user_name}}\n</text>
-                  </view>
-                  <view class="msg_user_content" bindtap="toMessage" data-id="{{m.id}}" data-name="{{m.to_user_name}}">
-                    <view class="msg_user_text">
-                      <text>我: {{m.content}}</text>
-                    </view>
-                  </view>
-                </block>
-                <block wx:else>
-                  <view class="msg_user_img" bindtap="toUser" data-uid="{{m.user_id}}">
-                    <image src="{{m.user_img}}"></image>
-                    <text class="msg_user_name">{{m.user_name}}\n</text>
-                  </view>
-                  <view class="msg_user_content" bindtap="toMessage" data-id="{{m.id}}" data-name="{{m.user_name}}">
-                    <view class="msg_user_text">
-                      <text>{{m.user_name}}: {{m.content}}</text>
-                    </view>
-                  </view>
-                </block>
+      <view class="record_input">
+        <navigator url="/pages/record/record" open-type="navigate">记录</navigator>
+      </view>
+
+      <block wx:for="{{moreRecord}}" wx:for-item="mr" wx:if="{{mr.show==true}}">
+        <view class="record_item">
+          <view class="record_time">
+            {{mr.time}}
+          </view>
+          <view class="record_content" cid="{{mr.record_id}}">
+            <text> {{mr.content}}</text>
+          </view>
+          <image src="../../icon/bin.png" class="record_img" bindtap="deleteMRecord" data-show="{{mr.show}}"></image>
+        </view>
+      </block>
+
+      <block wx:for="{{record}}" wx:for-item="r" wx:if="{{r.show==true}}">
+        <view class="record_item">
+          <view class="record_time">
+            {{r.time}}
+          </view>
+          <view class="record_content" cid="{{r.record_id}}">
+            <text> {{r.content}}</text>
+          </view>
+          <image src="../../icon/bin.png" class="record_img" bindtap="deleteRecord" data-show="{{r.show}}" data-sid="{{r.record_id}}"></image>
+        </view>
+      </block>
+
+    </block>
+
+    <!-- 私信 -->
+    <block wx:if="{{t.id==2}}">
+      <block wx:for="{{message}}" wx:for-item="m" wx:if="{{m.islast==true}}">
+        <view class="msg_item">
+          <view class="msg_user">
+            <block wx:if="{{m.user_id==0}}">
+              <view class="msg_user_img" bindtap="toUser" data-uid="{{m.to_user_id}}">
+                <image src="{{m.to_user_img}}"></image>
+                <text class="msg_user_name">{{m.to_user_name}}\n</text>
               </view>
-            </view>
-          </block>
-        </block>
-
+              <view class="msg_user_content" bindtap="toMessage" data-id="{{m.id}}" data-name="{{m.to_user_name}}">
+                <view class="msg_user_text">
+                  <text>我: {{m.content}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="msg_user_img" bindtap="toUser" data-uid="{{m.user_id}}">
+                <image src="{{m.user_img}}"></image>
+                <text class="msg_user_name">{{m.user_name}}\n</text>
+              </view>
+              <view class="msg_user_content" bindtap="toMessage" data-id="{{m.id}}" data-name="{{m.user_name}}">
+                <view class="msg_user_text">
+                  <text>{{m.user_name}}: {{m.content}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
       </block>
     </block>
+
+  </block>
+</block>

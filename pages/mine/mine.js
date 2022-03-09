@@ -1,7 +1,6 @@
-//index.js
-//获取应用实例
-const app = getApp()
-var util = require('../../utils/util.js')
+// pages/mine/mine.js
+const util = require('../../utils/util.js')
+
 Page({
   data: {
     motto: 'Welcome to Shares',
@@ -10,26 +9,25 @@ Page({
     // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     user_img: "../../images/icon.jpg",
     user_name: "MEAT",
-    feed:[],
-    user:[],
-    record:[],
-    moreRecord:[],
-    message:[],
-    tabs:[
-      {
-        "id":0,
-        "name":"分享",
-        "isActive":true
+    feed: [],
+    user: [],
+    record: [],
+    moreRecord: [],
+    message: [],
+    tabs: [{
+        "id": 0,
+        "name": "分享",
+        "isActive": true
       },
       {
-        "id":1,
-        "name":"记录",
-        "isActive":false
+        "id": 1,
+        "name": "记录",
+        "isActive": false
       },
       {
-        "id":2,
-        "name":"私信",
-        "isActive":false
+        "id": 2,
+        "name": "私信",
+        "isActive": false
       }
     ]
   },
@@ -70,19 +68,23 @@ Page({
   //     hasUserInfo: true
   //   })
   // },
-  onShow: function(options){
+  onShow: function (options) {
     var pages = getCurrentPages();
-    var curpage = pages[pages.length-1];
+    var curpage = pages[pages.length - 1];
   },
-  handleItemChange(e){
-    const {index} = e.detail;
-    let {tabs} = this.data;
-    tabs.forEach((v,i)=>i===index?v.isActive=true:v.isActive=false);
+  handleItemChange(e) {
+    const {
+      index
+    } = e.detail;
+    let {
+      tabs
+    } = this.data;
+    tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
     this.setData({
       tabs
     })
   },
-  refresh: function(){
+  refresh: function () {
     var feed = util.getPublish();
     var user = util.getUser();
     var record = util.getRecord();
@@ -92,91 +94,91 @@ Page({
     var record_data = record.data;
     var message_data = message.data;
     this.setData({
-      feed:feed_data,
-      user:user_data,
-      record:record_data,
-      message:message_data
+      feed: feed_data,
+      user: user_data,
+      record: record_data,
+      message: message_data
     });
   },
-  bindContentTap: function(cid) {
+  bindContentTap: function (cid) {
     let aid = cid.currentTarget.dataset.cid;
     wx.navigateTo({
-      url: '../mydetail/mydetail?cid='+aid
+      url: '../mydetail/mydetail?cid=' + aid
     })
   },
-  toLike:function(e){
+  toLike: function (e) {
     let like = e.currentTarget.dataset.like;
-    let id = e.currentTarget.dataset.id-1;
+    let id = e.currentTarget.dataset.id - 1;
     let num = e.currentTarget.dataset.num;
-    if(like==false){
+    if (like == false) {
       this.setData({
-        ['feed[' + id + '].good_num']: num+1
+        ['feed[' + id + '].good_num']: num + 1
       })
-    }else if(like==true){
+    } else if (like == true) {
       this.setData({
-        ['feed[' + id + '].good_num']: num-1
+        ['feed[' + id + '].good_num']: num - 1
       })
     }
     this.setData({
       ['feed[' + id + '].islike']: !like
     })
   },
-  toCollect:function(e){
+  toCollect: function (e) {
     let collect = e.currentTarget.dataset.collect;
-    let id = e.currentTarget.dataset.id-1;
+    let id = e.currentTarget.dataset.id - 1;
     this.setData({
       ['feed[' + id + '].iscollect']: !collect
     })
   },
-  delete:function(e){
+  delete: function (e) {
     let show = e.currentTarget.dataset.show;
-    let sid = e.currentTarget.dataset.sid-1;
-    if(show==true){
+    let sid = e.currentTarget.dataset.sid - 1;
+    if (show == true) {
       this.setData({
-        ['feed[' + sid + '].show']: false 
+        ['feed[' + sid + '].show']: false
       })
     }
   },
-  deleteRecord:function(e){
+  deleteRecord: function (e) {
     let show = e.currentTarget.dataset.show;
-    let sid = e.currentTarget.dataset.sid-1;
-    if(show==true){
+    let sid = e.currentTarget.dataset.sid - 1;
+    if (show == true) {
       this.setData({
-        ['record[' + sid + '].show']: false 
+        ['record[' + sid + '].show']: false
       })
     }
   },
-  deleteMRecord:function(e){
+  deleteMRecord: function (e) {
     let show = e.currentTarget.dataset.show;
-    if(show==true){
+    if (show == true) {
       this.setData({
-        ['moreRecord[0].show']: false 
+        ['moreRecord[0].show']: false
       })
     }
   },
-  toMore:function(e){
+  toMore: function (e) {
     wx.navigateTo({
       url: '../more/more'
     })
   },
-  toUser:function(e){
+  toUser: function (e) {
     let uid = e.currentTarget.dataset.uid;
     wx.navigateTo({
-      url: '../user/user?uid='+uid
+      url: '../user/user?uid=' + uid
     })
   },
-  toMessage:function(e){
+  toMessage: function (e) {
     let id = e.currentTarget.dataset.id;
     let name = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '../message/message?id='+id+'&name='+name
+      url: '../message/message?id=' + id + '&name=' + name
     })
   },
-  toComment:function(e){
+  toComment: function (e) {
     let tp = e.currentTarget.dataset.tp;
     let aid = e.currentTarget.dataset.cid;
     wx.navigateTo({
-      url: '../mydetail/mydetail?tp='+tp+'&cid='+aid
+      url: '../mydetail/mydetail?tp=' + tp + '&cid=' + aid
     })
   }
 })
