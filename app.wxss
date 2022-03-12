@@ -1,29 +1,12 @@
 @import "./styles/iconfont.wxss";
 
-page,
-view,
-text,
-swiper,
-swoper-item,
-navigator {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/*  主题颜色  */
 page {
-  /* 定义 主题颜色 */
   --themeColor: #8B008B;
-  --themeColor-day: #E6E6FA;
-  --themeColor-night: #4169E1;
-  /* 定义 字体大小 */
+  --bg-light: #E6E6FA;
+  --bg-dark: #4169E1;
   font-size: 32rpx;
 }
 
-.ellipsis {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
+.container {
+  padding: 30rpx;
 }

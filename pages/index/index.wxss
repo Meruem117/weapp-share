@@ -1,10 +1,5 @@
-view {
-  /* 使用 主题颜色 */
-  color: var(#000);
-}
-
 page {
-  background: #E6E6FA;
+  background: var(--bg-light);
   height: 100%;
 }
 

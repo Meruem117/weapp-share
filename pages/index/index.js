@@ -6,20 +6,18 @@ Page({
     feed: [],
     feed_length: 0
   },
+  onLoad: function () {
+    this.refresh();
+  },
   bindContentTap: function (cid) {
     let aid = cid.currentTarget.dataset.cid;
     wx.navigateTo({
       url: '../detail/detail?cid=' + aid
     })
   },
-  onLoad: function () {
-    var that = this
-    this.refresh();
-  },
   upper: function () {
     wx.showNavigationBarLoading()
     this.refresh();
-    console.log("upper");
     setTimeout(function () {
       wx.hideNavigationBarLoading();
       wx.stopPullDownRefresh();

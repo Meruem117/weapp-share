@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "Share",
   "usingComponents": {
-    "Search": "/components/search/search"
+    "van-search": "@vant/weapp/search/index"
   }
 }
