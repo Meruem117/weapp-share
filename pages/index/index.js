@@ -4,7 +4,8 @@ const util = require('../../utils/util.js')
 Page({
   data: {
     feed: [],
-    feed_length: 0
+    feed_length: 0,
+    key: ''
   },
   onLoad: function () {
     this.refresh();
