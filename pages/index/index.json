@@ -1,6 +1,6 @@
 {
+  "navigationBarTitleText": "Share",
   "usingComponents": {
     "Search": "/components/search/search"
-  },
-  "navigationBarTitleText": "Share"
+  }
 }

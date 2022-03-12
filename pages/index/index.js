@@ -6,7 +6,6 @@ Page({
     feed: [],
     feed_length: 0
   },
-  //事件处理函数
   bindContentTap: function (cid) {
     let aid = cid.currentTarget.dataset.cid;
     wx.navigateTo({
@@ -90,11 +89,6 @@ Page({
       ['feed[' + id + '].iscollect']: !collect
     })
   },
-  // toComment:function(e){
-  //   wx.navigateTo({
-  //     url: '../comment/comment'
-  //   })
-  // },
   toComment: function (e) {
     let tp = e.currentTarget.dataset.tp;
     let aid = e.currentTarget.dataset.cid;

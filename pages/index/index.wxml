@@ -5,9 +5,8 @@
 </view>
 
 <scroll-view scroll-y class="plus" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <block wx:for="{{feed}}" wx:for-item='item' wx:for-key="info_id" class="block_item">
+  <block wx:for="{{feed}}" wx:for-item='item' wx:key="info_id" class="block_item">
     <view class="plus_item">
-
       <view class="plus_user" bindtap="toUser" data-uid="{{item.user_id}}">
         <a>
           <view class="plus_img">
@@ -16,7 +15,6 @@
           <text>{{item.user_name}}</text>
         </a>
       </view>
-
       <view class="plus_content" cid="{{item.info_id}}">
         <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
         <view class="plus_action">
@@ -35,18 +33,16 @@
             <block wx:if="{{item.iscollect == false}}">
               <image src="../../icon/collect.png" class="img4"></image>
             </block>
-            <block wx:if="{{item.iscollect == true}}">
+            <block wx:else>
               <image src="../../icon/collect_.png" class="img4"></image>
             </block>
           </view>
         </view>
       </view>
-
       <view class="plus_num">
         <view class="plus_like">{{item.good_num}}</view>
         <view class="plus_comment">{{item.comment_num}}</view>
       </view>
-
     </view>
   </block>
 </scroll-view>
