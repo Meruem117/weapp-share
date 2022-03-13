@@ -10,3 +10,8 @@ page {
 .container {
   padding: 30rpx;
 }
+
+.scroll {
+  height: 100%;
+  width: 100%;
+}

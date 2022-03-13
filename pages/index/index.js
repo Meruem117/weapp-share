@@ -8,55 +8,21 @@ Page({
     key: ''
   },
   onLoad: function () {
-    this.refresh();
+    this.load();
   },
   bindContentTap: function (cid) {
-    let aid = cid.currentTarget.dataset.cid;
+    let aid = cid.currentTarget.dataset.cid
     wx.navigateTo({
       url: '../detail/detail?cid=' + aid
     })
   },
-  upper: function () {
-    wx.showNavigationBarLoading()
-    this.refresh();
-    setTimeout(function () {
-      wx.hideNavigationBarLoading();
-      wx.stopPullDownRefresh();
-    }, 2000);
-  },
-  lower: function (e) {
-    wx.showNavigationBarLoading();
-    var that = this;
-    setTimeout(function () {
-      wx.hideNavigationBarLoading();
-      that.nextLoad();
-    }, 1000);
-    console.log("lower")
-  },
-  //网络请求数据, 实现首页刷新
-  refresh0: function () {
-    var index_api = '';
-    util.getData(index_api)
-      .then(function (data) {
-        console.log(data);
-      });
-  },
-  refresh: function () {
-    var feed = util.getPlus();
-    var feed_data = feed.data;
+  load: function () {
+    const feed = util.getPlus()
+    const feed_data = feed.data
     this.setData({
       feed: feed_data,
       feed_length: feed_data.length
-    });
-  },
-  //使用本地 fake 数据实现继续加载效果
-  nextLoad: function () {
-    var next = util.getPlus();
-    var next_data = next.data;
-    this.setData({
-      feed: this.data.feed.concat(next_data),
-      feed_length: this.data.feed_length + next_data.length
-    });
+    })
   },
   toLike: function (e) {
     let like = e.currentTarget.dataset.like;
