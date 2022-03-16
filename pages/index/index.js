@@ -5,7 +5,8 @@ Page({
   data: {
     feed: [],
     feed_length: 0,
-    key: ''
+    key: '',
+    showAction: false
   },
   onLoad: function () {
     this.load();
@@ -60,5 +61,21 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?tp=' + tp + '&cid=' + aid
     })
-  }
+  },
+  onSearch() {
+    console.log(this.data.key)
+  },
+  onChange(e) {
+    const value = e.detail
+    this.setData({
+      key: value,
+      showAction: value !== ''
+    })
+  },
+  onCancel() {
+    this.setData({
+      key: '',
+      showAction: false
+    })
+  },
 })

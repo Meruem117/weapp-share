@@ -1,6 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <van-search value="{{ key }}" shape="round" show-action="{{key !== ''}}" background="var(--bg-light)" placeholder="请输入搜索关键词" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
+  <van-search value="{{key}}" shape="round" show-action="{{showAction}}" background="var(--bg-light)" placeholder="请输入关键词搜索" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
   <scroll-view scroll-y class="scroll">
     <block wx:for="{{feed}}" wx:for-item='item' wx:key="info_id" class="block_item">
       <view class="plus_item">
