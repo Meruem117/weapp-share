@@ -2,45 +2,39 @@
 <view class="container">
   <van-search value="{{key}}" shape="round" show-action="{{showAction}}" background="var(--bg-light)" placeholder="请输入关键词搜索" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
   <scroll-view scroll-y class="scroll">
-    <block wx:for="{{feed}}" wx:for-item='item' wx:key="info_id" class="block_item">
-      <view class="plus_item">
-        <view class="plus_user" bindtap="toUser" data-uid="{{item.user_id}}">
-          <a>
-            <view class="plus_img">
-              <image src="{{item.user_img}}"></image>
-            </view>
-            <text>{{item.user_name}}</text>
-          </a>
-        </view>
-        <view class="plus_content" cid="{{item.info_id}}">
-          <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
-          <view class="plus_action">
-            <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.good_num}}">
-              <block wx:if="{{item.islike == false}}">
-                <image src="../../icon/like.png" class="img1"></image>
-              </block>
-              <block wx:elif="{{item.islike == true}}">
-                <image src="../../icon/like_.png" class="img1"></image>
-              </block>
-            </view>
-            <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
-              <image src="../../icon/comment.png" class="img2"></image>
-            </view>
-            <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
-              <block wx:if="{{item.iscollect == false}}">
-                <image src="../../icon/collect.png" class="img4"></image>
-              </block>
-              <block wx:else>
-                <image src="../../icon/collect_.png" class="img4"></image>
-              </block>
-            </view>
+    <view wx:for="{{feed}}" wx:for-item="item" wx:key="info_id" class="item">
+      <view class="item-user" bindtap="toUser" data-uid="{{item.user_id}}">
+        <image src="{{item.user_img}}"></image>
+        <text>{{item.user_name}}</text>
+      </view>
+      <view class="plus_content" cid="{{item.info_id}}">
+        <text bindtap="bindContentTap" data-cid="{{item.info_id}}"> {{item.content}}</text>
+        <view class="plus_action">
+          <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.good_num}}">
+            <block wx:if="{{item.islike == false}}">
+              <image src="../../icon/like.png" class="img1"></image>
+            </block>
+            <block wx:elif="{{item.islike == true}}">
+              <image src="../../icon/like_.png" class="img1"></image>
+            </block>
+          </view>
+          <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}">
+            <image src="../../icon/comment.png" class="img2"></image>
+          </view>
+          <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}">
+            <block wx:if="{{item.iscollect == false}}">
+              <image src="../../icon/collect.png" class="img4"></image>
+            </block>
+            <block wx:else>
+              <image src="../../icon/collect_.png" class="img4"></image>
+            </block>
           </view>
         </view>
-        <view class="plus_num">
-          <view class="plus_like">{{item.good_num}}</view>
-          <view class="plus_comment">{{item.comment_num}}</view>
-        </view>
       </view>
-    </block>
+      <view class="plus_num">
+        <view class="plus_like">{{item.good_num}}</view>
+        <view class="plus_comment">{{item.comment_num}}</view>
+      </view>
+    </view>
   </scroll-view>
 </view>
