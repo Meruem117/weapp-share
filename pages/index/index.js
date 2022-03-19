@@ -1,5 +1,6 @@
 // pages/index/index.js
 const util = require('../../utils/util.js')
+const service = require('../../services/index')
 
 Page({
   data: {
@@ -17,6 +18,7 @@ Page({
   },
   onLoad: function () {
     this.load()
+    service.getData()
   },
   load() {
     const feed = util.getPlus()
