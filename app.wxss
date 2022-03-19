@@ -4,6 +4,8 @@ page {
   --themeColor: #8B008B;
   --bg-light: #E6E6FA;
   --bg-dark: #4169E1;
+  background: var(--bg-light);
+  height: 100%;
   font-size: 32rpx;
 }
 

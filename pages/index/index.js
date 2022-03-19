@@ -6,18 +6,19 @@ Page({
     feed: [],
     feed_length: 0,
     key: '',
-    showAction: false
+    showAction: false,
+    image: {
+      like: '../../icon/like.png',
+      like_: '../../icon/like_.png',
+      comment: '../../icon/comment.png',
+      collect: '../../icon/collect.png',
+      collect_: '../../icon/collect_.png'
+    }
   },
   onLoad: function () {
-    this.load();
+    this.load()
   },
-  bindContentTap: function (cid) {
-    let aid = cid.currentTarget.dataset.cid
-    wx.navigateTo({
-      url: '../detail/detail?cid=' + aid
-    })
-  },
-  load: function () {
+  load() {
     const feed = util.getPlus()
     const feed_data = feed.data
     this.setData({
@@ -25,7 +26,13 @@ Page({
       feed_length: feed_data.length
     })
   },
-  toLike: function (e) {
+  toDetail(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?cid=' + id
+    })
+  },
+  toLike(e) {
     let like = e.currentTarget.dataset.like;
     let id = e.currentTarget.dataset.id - 1;
     let num = e.currentTarget.dataset.num;
@@ -42,20 +49,20 @@ Page({
       ['feed[' + id + '].islike']: !like
     })
   },
-  toUser: function (e) {
+  toUser(e) {
     let uid = e.currentTarget.dataset.uid;
     wx.navigateTo({
       url: '../user/user?uid=' + uid
     })
   },
-  toCollect: function (e) {
+  toCollect(e) {
     let collect = e.currentTarget.dataset.collect;
     let id = e.currentTarget.dataset.id - 1;
     this.setData({
       ['feed[' + id + '].iscollect']: !collect
     })
   },
-  toComment: function (e) {
+  toComment(e) {
     let tp = e.currentTarget.dataset.tp;
     let aid = e.currentTarget.dataset.cid;
     wx.navigateTo({
@@ -77,5 +84,5 @@ Page({
       key: '',
       showAction: false
     })
-  },
+  }
 })

@@ -1,10 +1,5 @@
 /* pages/index/index.wxss */
 
-page {
-  background: var(--bg-light);
-  height: 100%;
-}
-
 .item {
   width: 90%;
   margin: 0 auto;
@@ -14,71 +9,49 @@ page {
   background-color: #ffffff;
 }
 
-.item .item-user {
+.item .user {
   display: flex;
   padding-top: 10rpx;
   padding-left: 15rpx;
 }
 
-.item .item-user image {
+.item .user image {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
 }
 
-.item .item-user text {
+.item .user text {
   height: 45rpx;
-  font-size: 35rpx;
+  font-size: 40rpx;
   font-weight: bold;
   margin: auto 10rpx;
 }
 
-.plus_content {
-  margin-left: 90rpx;
-  font-size: 35rpx;
-  margin-top: 60rpx;
-}
-
-.plus_action image {
-  margin-top: 40rpx;
-  display: inline-block;
-  width: 48rpx;
-  height: 48rpx;
-}
-
-.plus_action .img2 {
-  margin-left: 50rpx;
-}
-
-.plus_action .img3 {
-  margin-left: 50rpx;
-}
-
-.plus_action .img4 {
-  height: 50rpx;
-  width: 50rpx;
-  margin-left: 380rpx;
-}
-
-.plus_action view {
-  display: inline-block;
-}
-
-.plus_num {
-  display: inline-block;
-  vertical-align: text-bottom;
+.item .content {
   margin-top: 10rpx;
-  margin-left: 88rpx;
-  font-size: 30rpx;
-  color: #a0acac;
+  margin-left: 100rpx;
+  font-size: 35rpx;
 }
 
-.plus_like {
-  display: inline;
-  margin-left: 12rpx;
+.item .content .actions {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin-top: 20rpx;
 }
 
-.plus_comment {
-  display: inline;
-  margin-left: 70rpx;
+.item .content .actions .action {
+  margin-right: 15rpx;
+}
+
+.item .content .actions .action image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.item .content .actions .action text {
+  font-size: 25rpx;
+  color: gray;
+  margin-left: 5rpx;
 }
