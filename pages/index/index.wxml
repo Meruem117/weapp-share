@@ -2,25 +2,24 @@
 <view class="container">
   <van-search value="{{key}}" shape="round" show-action="{{showAction}}" background="var(--bg-light)" placeholder="请输入关键词搜索" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
   <scroll-view scroll-y class="scroll">
-    <view wx:for="{{feed}}" wx:key="info_id" class="item">
-      <view class="user" bindtap="toUser" data-uid="{{item.user_id}}">
-        <image src="{{item.user_img}}"></image>
-        <text>{{item.user_name}}</text>
+    <view wx:for="{{data}}" wx:key="id" class="item">
+      <view class="user" bindtap="toUser" data-uid="{{item.userId}}">
+        <image src="{{item.avatar}}"></image>
+        <text>{{item.userName}}</text>
       </view>
       <view class="content">
-        <text bindtap="toDetail" data-id="{{item.info_id}}">{{item.content}}</text>
+        <text bindtap="toDetail" data-id="{{item.id}}">{{item.content}}</text>
         <view class="actions">
-          <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.good_num}}" class="action">
+          <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.likes}}" class="action">
             <image src="{{item.islike ? image.like_ : image.like}}"></image>
-            <text>{{item.good_num}}</text>
+            <text>{{item.likes}}</text>
           </view>
-          <view bindtap="toComment" data-tp="msg" data-cid="{{item.info_id}}" class="action">
+          <view bindtap="toComment" data-tp="msg" data-cid="{{item.id}}" class="action">
             <image src="{{image.comment}}"></image>
-            <text>{{item.comment_num}}</text>
           </view>
-          <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.info_id}}" class="action">
+          <!-- <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.id}}" class="action">
             <image src="{{item.iscollect ? image.collect_ : image.collect}}"></image>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>

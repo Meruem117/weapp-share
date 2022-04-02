@@ -9,20 +9,17 @@ Page({
     image: {
       like: '../../icon/like.png',
       like_: '../../icon/like_.png',
-      comment: '../../icon/comment.png',
-      collect: '../../icon/collect.png',
-      collect_: '../../icon/collect_.png'
+      comment: '../../icon/comment.png'
     }
   },
   onLoad: function () {
     this.load()
   },
-  load() {
-    const data = commentService.getAll()
+  async load() {
+    const res = await commentService.getAll()
     this.setData({
-      data: data,
+      data: res.data,
     })
-    console.log(this.data.data)
   },
   toDetail(e) {
     const id = e.currentTarget.dataset.id
