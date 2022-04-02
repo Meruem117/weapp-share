@@ -1,4 +1,6 @@
-const API_HOST = 'http://localhost:8080'
+import {
+  API_HOST
+} from '../constant'
 
 function getData() {
   let data = []
