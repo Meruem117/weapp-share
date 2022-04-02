@@ -2,10 +2,10 @@ const {
   API_HOST
 } = require('../constant/index')
 
-function getAll() {
+async function getAll() {
   let data = []
   wx.request({
-    url: API_HOST + '/user/all',
+    url: API_HOST + '/comment/all',
     success(res) {
       data = res.data
     }

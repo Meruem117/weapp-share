@@ -1,11 +1,9 @@
 // pages/index/index.js
-const util = require('../../utils/util.js')
-const service = require('../../services/index')
+const commentService = require('../../services/comment')
 
 Page({
   data: {
-    feed: [],
-    feed_length: 0,
+    data: [],
     key: '',
     showAction: false,
     image: {
@@ -18,15 +16,13 @@ Page({
   },
   onLoad: function () {
     this.load()
-    service.getData()
   },
   load() {
-    const feed = util.getPlus()
-    const feed_data = feed.data
+    const data = commentService.getAll()
     this.setData({
-      feed: feed_data,
-      feed_length: feed_data.length
+      data: data,
     })
+    console.log(this.data.data)
   },
   toDetail(e) {
     const id = e.currentTarget.dataset.id
