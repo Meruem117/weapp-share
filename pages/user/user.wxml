@@ -1,24 +1,26 @@
 <!--pages/user/user.wxml-->
 <view class="user">
-  <view class="info">
+  <view class="detail">
     <image class="avatar" src="{{data.avatar}}" />
-    <view class="{{data.gender === GENDER.MALE.value ? 'name iconfont icon-male' : 'name iconfont icon-female'}}">
-      {{data.name}}
+    <view class="info">
+      <view class="flex-row">
+        <view class="{{data.gender === GENDER.MALE ? 'name iconfont icon-male' : 'name iconfont icon-female'}}">
+          {{data.name}}
+        </view>
+        <view class="location">{{data.location}}</view>
+      </view>
+      <view class="sign">{{data.sign}}</view>
     </view>
-    <image src="/icon/message.png" class="img_message" bindtap="toMessage" data-id="{{u.user_id}}" data-name="{{u.user_name}}"></image>
+    <!-- <image src="/icon/message.png" class="img_message" bindtap="toMessage" data-id="{{u.user_id}}" data-name="{{u.user_name}}" /> -->
   </view>
-  <view class="user_from">
-    <text>{{data.location}}</text>
-  </view>
-  <view class="user_intro">
-    <text>{{data.sign}}</text>
+  <!-- <view class="user_intro">
   </view>
   <view class="user_action">
-    <text>{{data.total}} Shares</text>
-  </view>
+    <text>{{total}} Shares</text>
+  </view> -->
 </view>
 
-<block wx:for="{{feed}}" wx:for-item="item">
+<block wx:for="{{list}}" wx:key="id">
   <block wx:if="{{item.user_id==uid}}">
     <view class="plus_item">
 

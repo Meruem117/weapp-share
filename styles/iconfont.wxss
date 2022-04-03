@@ -80,16 +80,16 @@
   content: "\e609";
 }
 
-.icon-female:before {
+.icon-female:after {
   content: "\e631";
   color: red;
-  font-size: 42rpx;
+  font-size: 30rpx;
 }
 
-.icon-male:before {
+.icon-male:after {
   content: "\e62e";
-  color: #00BFFF;
-  font-size: 40rpx;
+  color: blue;
+  font-size: 30rpx;
 }
 
 .icon-bin:before {

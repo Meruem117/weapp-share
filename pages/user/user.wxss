@@ -1,39 +1,47 @@
 /* pages/index/index.wxss */
 
 .user {
+  height: 320rpx;
   border-bottom: 5px solid purple;
   border-radius: 80rpx;
-  height: 400rpx;
   font-size: 35rpx;
 }
 
-.user .info {
+.user .detail {
   display: flex;
+  width: 100%;
   padding: 30rpx;
 }
 
-.user .info .avatar {
+.user .detail .avatar {
   width: 110rpx;
   height: 110rpx;
+  margin: auto 0;
   border-radius: 50%;
 }
 
-.user .info .name {
-  margin-left: 40rpx;
+.user .detail .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.user .detail .info .name {
+  margin-left: 30rpx;
   font-size: 40rpx;
   font-weight: bold;
 }
 
-.user_from {
-  margin-top: 30rpx;
-  margin-left: 40rpx;
-  font-size: 30rpx;
+.user .detail .info .location {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size: 25rpx;
   color: gray;
 }
 
-.user_intro {
-  margin-top: 30rpx;
-  margin-left: 40rpx;
+.user .detail .info .sign {
+  margin-top: 15rpx;
+  margin-left: 30rpx;
   font-size: 30rpx;
 }
 
