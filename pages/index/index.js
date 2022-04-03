@@ -5,6 +5,8 @@ Page({
   data: {
     data: [],
     key: '',
+    page: 1,
+    size: 3,
     showAction: false,
     image: {
       like: '../../icon/like.png',
@@ -16,56 +18,21 @@ Page({
     this.load()
   },
   async load() {
-    const res = await commentService.getAll()
-    this.setData({
-      data: res.data,
-    })
-  },
-  toDetail(e) {
-    const id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../detail/detail?cid=' + id
-    })
-  },
-  toLike(e) {
-    let like = e.currentTarget.dataset.like;
-    let id = e.currentTarget.dataset.id - 1;
-    let num = e.currentTarget.dataset.num;
-    if (like == false) {
-      this.setData({
-        ['feed[' + id + '].good_num']: num + 1
-      })
-    } else if (like == true) {
-      this.setData({
-        ['feed[' + id + '].good_num']: num - 1
-      })
+    let params = {
+      key: this.data.key,
+      page: this.data.page,
+      size: this.data.size
     }
+    const res = await commentService.getSearchPages(params)
     this.setData({
-      ['feed[' + id + '].islike']: !like
-    })
-  },
-  toUser(e) {
-    let uid = e.currentTarget.dataset.uid;
-    wx.navigateTo({
-      url: '../user/user?uid=' + uid
-    })
-  },
-  toCollect(e) {
-    let collect = e.currentTarget.dataset.collect;
-    let id = e.currentTarget.dataset.id - 1;
-    this.setData({
-      ['feed[' + id + '].iscollect']: !collect
-    })
-  },
-  toComment(e) {
-    let tp = e.currentTarget.dataset.tp;
-    let aid = e.currentTarget.dataset.cid;
-    wx.navigateTo({
-      url: '../detail/detail?tp=' + tp + '&cid=' + aid
+      data: res.data.list,
     })
   },
   onSearch() {
-    console.log(this.data.key)
+    this.setData({
+      page: 1
+    })
+    this.load()
   },
   onChange(e) {
     const value = e.detail
@@ -77,7 +44,28 @@ Page({
   onCancel() {
     this.setData({
       key: '',
+      page: 1,
       showAction: false
     })
-  }
+    this.load()
+  },
+  toDetail(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?cid=' + id
+    })
+  },
+  toUser(e) {
+    let uid = e.currentTarget.dataset.uid;
+    wx.navigateTo({
+      url: '../user/user?uid=' + uid
+    })
+  },
+  toComment(e) {
+    let tp = e.currentTarget.dataset.tp;
+    let aid = e.currentTarget.dataset.cid;
+    wx.navigateTo({
+      url: '../detail/detail?tp=' + tp + '&cid=' + aid
+    })
+  },
 })

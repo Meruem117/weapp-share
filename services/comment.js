@@ -5,6 +5,12 @@ async function getAll() {
   return data
 }
 
+async function getSearchPages(pageSearchRequest) {
+  const data = await request.get('/comment/list', pageSearchRequest)
+  return data
+}
+
 module.exports = {
-  getAll
+  getAll,
+  getSearchPages
 }
