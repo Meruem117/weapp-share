@@ -15,6 +15,7 @@
         <view class="action" bindtap="tapContent" data-id="{{item.id}}">
           <image src="{{icon.COMMENT}}"></image>
         </view>
+        <view class="time">{{item.time}}</view>
       </view>
     </view>
   </view>

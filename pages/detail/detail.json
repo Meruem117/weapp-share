@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
     "comment-list": "/components/share-list/share-list"
   }
 }

@@ -6,13 +6,13 @@
   margin-bottom: 30rpx;
   padding: 10rpx;
   border-radius: 20rpx;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .item .user {
   display: flex;
-  padding-top: 10rpx;
-  padding-left: 15rpx;
+  margin-top: 10rpx;
+  margin-left: 15rpx;
 }
 
 .item .user image {
@@ -51,7 +51,14 @@
 }
 
 .item .content .actions .action text {
+  margin-left: 5rpx;
   font-size: 25rpx;
   color: gray;
-  margin-left: 5rpx;
+}
+
+.item .content .actions .time {
+  margin-top: 10rpx;
+  margin-left: 120rpx;
+  font-size: 25rpx;
+  color: gray;
 }

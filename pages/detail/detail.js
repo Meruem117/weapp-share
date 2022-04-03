@@ -43,4 +43,21 @@ Page({
       total: res.data.total
     })
   },
+  /**
+   * 跳转用户详情
+   * @param {{detail: number}} e 
+   */
+  toUser(e) {
+    const id = e.detail
+    wx.navigateTo({
+      url: '../user/user?id=' + id
+    })
+  },
+  /**
+   * 评论框监听
+   * @param {{detail: string}} e 
+   */
+  onChange(e) {
+    console.log(e.detail)
+  },
 })

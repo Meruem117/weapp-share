@@ -1,4 +1,30 @@
 <!--pages/detail/detail.wxml-->
 <view class="container">
-  <view></view>
+  <view class="detail">
+    <view class="user">
+      <image src="{{data.avatar}}" bindtap="tapUser" data-id="{{data.userId}}"></image>
+      <text bindtap="tapUser" data-id="{{data.userId}}">{{data.userName}}</text>
+    </view>
+    <view class="content">
+      <text bindtap="tapContent" data-id="{{data.id}}">{{data.content}}</text>
+      <view class="actions">
+        <view class="action">
+          <image src="{{data.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
+          <text>{{data.likes}}</text>
+        </view>
+        <view class="action" bindtap="tapContent" data-id="{{data.id}}">
+          <image src="{{icon.COMMENT}}"></image>
+        </view>
+        <view class="time">{{data.time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <comment-list data="{{list}}" bind:tapUser="toUser" />
+  </view>
+  <view class="comment">
+    <view class="input">
+      <van-field value="{{value}}" placeholder="评论一下" bind:change="onChange" />
+    </view>
+  </view>
 </view>
