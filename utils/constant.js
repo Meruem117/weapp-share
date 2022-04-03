@@ -6,5 +6,6 @@ export const GENDER = {
 export const ICON = {
   LIKE_ACTIVE: '/images/icons/like-active.png',
   LIKE_INACTIVE: '/images/icons/like-inactive.png',
-  COMMENT: '/images/icons/comment.png'
+  COMMENT: '/images/icons/comment.png',
+  MESSAGE: '/images/icons/message.png'
 }

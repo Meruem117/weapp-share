@@ -11,12 +11,8 @@
       </view>
       <view class="sign">{{data.sign}}</view>
     </view>
-    <!-- <image src="/icon/message.png" class="img_message" bindtap="toMessage" data-id="{{u.user_id}}" data-name="{{u.user_name}}" /> -->
+    <image class="message" src="{{icon.MESSAGE}}" bindtap="toMessage" />
   </view>
-  <!-- <view class="user_intro">
-  </view>
-  <view class="user_action">
-    <text>{{total}} Shares</text>
-  </view> -->
+  <view class="total">{{total}} Shares</view>
 </view>
 <share-list data="{{list}}" />

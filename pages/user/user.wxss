@@ -2,9 +2,10 @@
 
 .user {
   height: 320rpx;
+  position: relative;
   margin-bottom: 30rpx;
-  border-bottom: 5px solid purple;
   border-radius: 80rpx;
+  border-bottom: 5px solid purple;
   font-size: 35rpx;
 }
 
@@ -17,13 +18,13 @@
 .user .detail .avatar {
   width: 110rpx;
   height: 110rpx;
-  margin: auto 0;
   border-radius: 50%;
 }
 
 .user .detail .info {
   display: flex;
   flex-direction: column;
+  width: 500rpx;
   margin-left: 10rpx;
 }
 
@@ -41,118 +42,26 @@
 }
 
 .user .detail .info .sign {
+  width: 100%;
   margin-top: 15rpx;
   margin-left: 30rpx;
   font-size: 30rpx;
+  word-break: break-all;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
 }
 
-.user_action {
-  margin-top: 30rpx;
-  font-size: 45rpx;
-}
-
-.user_action text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img_message {
-  margin-left: 360rpx;
-  display: inline-block;
-  width: 55rpx;
-  height: 55rpx;
-}
-
-
-.plus_item {
-  width: 98%;
-  padding: 30rpx 30rpx 20rpx;
-  margin: 7rpx 0 6rpx 0;
-  background: #ffffff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 5px #eeeeee;
-  border-radius: 35rpx;
-  margin-top: 15rpx;
-}
-
-.plus_user {
-  height: 45rpx;
-  font-size: 35rpx;
-  font-weight: bold;
-  left: 0;
-}
-
-.plus_user a {
-  display: inline-block;
+.user .detail .message {
+  width: 40rpx;
   height: 40rpx;
+  margin-top: 20rpx;
 }
 
-.plus_img {
-  position: relative;
-  display: inline-block;
-}
-
-.plus_img image {
-  display: inline-block;
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 45rpx;
-  top: 10rpx;
-  vertical-align: middle;
-}
-
-.plus_user text {
-  margin-left: 20rpx;
-}
-
-.plus_content {
-  margin-left: 30rpx;
+.user .total {
+  width: 100%;
+  position: absolute;
+  bottom: 10rpx;
+  text-align: center;
   font-size: 35rpx;
-  margin-top: 10rpx;
-}
-
-.plus_action image {
-  margin-top: 40rpx;
-  display: inline-block;
-  width: 48rpx;
-  height: 48rpx;
-}
-
-.plus_action .img2 {
-  margin-left: 50rpx;
-}
-
-.plus_action .img3 {
-  margin-left: 50rpx;
-}
-
-.plus_action .img4 {
-  height: 50rpx;
-  width: 50rpx;
-  margin-left: 450rpx;
-}
-
-.plus_action view {
-  display: inline-block;
-}
-
-.plus_num {
-  display: inline-block;
-  vertical-align: text-bottom;
-  margin-top: 15rpx;
-  margin-left: 28rpx;
-  font-size: 30rpx;
-  color: #a0acac;
-}
-
-.plus_like {
-  display: inline;
-  margin-left: 8rpx;
-}
-
-.plus_comment {
-  display: inline;
-  margin-left: 72rpx;
 }

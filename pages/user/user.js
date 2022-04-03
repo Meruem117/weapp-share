@@ -11,7 +11,8 @@ Page({
     total: 0,
     data: {},
     list: [],
-    gender: constant.GENDER
+    gender: constant.GENDER,
+    icon: constant.ICON
   },
   onLoad: function (options) {
     const id = options.id;
@@ -44,6 +45,14 @@ Page({
     this.setData({
       list: res.data.list,
       total: res.data.total
+    })
+  },
+  /**
+   * 跳转聊天框
+   */
+  toMessage() {
+    wx.navigateTo({
+      url: '../message/message?id=' + this.data.id
     })
   }
 })
