@@ -24,7 +24,8 @@
   </view>
   <view class="comment">
     <view class="input">
-      <van-field value="{{value}}" placeholder="评论一下" bind:change="onChange" />
+      <van-field value="{{content}}" placeholder="评论一下" clearable bind:change="onChange" />
     </view>
+    <button type="primary" size="mini" bindtap="onComment">评论</button>
   </view>
 </view>

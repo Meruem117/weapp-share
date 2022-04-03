@@ -10,6 +10,7 @@ Page({
     data: {},
     list: [],
     total: 0,
+    content: '',
     icon: constant.ICON
   },
   onLoad: function (option) {
@@ -58,6 +59,14 @@ Page({
    * @param {{detail: string}} e 
    */
   onChange(e) {
-    console.log(e.detail)
+    this.setData({
+      content: e.detail
+    })
+  },
+  /**
+   * 评论
+   */
+  onComment() {
+    console.log(this.data.content)
   },
 })

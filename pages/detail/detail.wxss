@@ -72,11 +72,18 @@
   width: 100%;
   position: absolute;
   bottom: 0;
+  display: flex;
   padding: 30rpx 0;
   background-color: gainsboro;
 }
 
 .comment .input {
-  width: 80%;
-  margin: 0 auto;
+  width: 75%;
+  padding-left: 30rpx;
+}
+
+.comment button {
+  padding: 5rpx 30rpx;
+  font-size: 30rpx;
+  text-align: center;
 }
