@@ -2,6 +2,7 @@
 
 .user {
   height: 320rpx;
+  margin-bottom: 30rpx;
   border-bottom: 5px solid purple;
   border-radius: 80rpx;
   font-size: 35rpx;

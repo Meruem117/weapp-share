@@ -46,7 +46,7 @@ Page({
   },
   /**
    * 搜索输入框监听
-   * @param {Event} e 
+   * @param {{detail: string}} e 
    */
   onChange(e) {
     const value = e.detail
@@ -65,25 +65,5 @@ Page({
       showAction: false
     })
     this.load()
-  },
-  /**
-   * 跳转用户详情
-   * @param {TargetDataset<{id: number}>} e 
-   */
-  toUser(e) {
-    const id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../user/user?id=' + id
-    })
-  },
-  /**
-   * 跳转分享详情
-   * @param {Event} e 
-   */
-  toDetail(e) {
-    const id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../detail/detail?cid=' + id
-    })
   }
 })
