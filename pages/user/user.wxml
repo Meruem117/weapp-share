@@ -15,4 +15,4 @@
   </view>
   <view class="total">{{total}} Shares</view>
 </view>
-<share-list data="{{list}}" />
+<share-list data="{{list}}" bind:tapContent="toDetail" />

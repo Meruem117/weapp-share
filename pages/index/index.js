@@ -65,5 +65,25 @@ Page({
       showAction: false
     })
     this.load()
+  },
+  /**
+   * 跳转用户详情
+   * @param {{detail: number}} e 
+   */
+  toUser(e) {
+    const id = e.detail
+    wx.navigateTo({
+      url: '../user/user?id=' + id
+    })
+  },
+  /**
+   * 跳转分享详情
+   * @param {{detail: number}} e 
+   */
+  toDetail(e) {
+    const id = e.detail
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id
+    })
   }
 })

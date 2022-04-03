@@ -53,5 +53,15 @@ Page({
     wx.navigateTo({
       url: '../message/message?id=' + this.data.id
     })
+  },
+  /**
+   * 跳转分享详情
+   * @param {{detail: number}} e 
+   */
+  toDetail(e) {
+    const id = e.detail
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id
+    })
   }
 })

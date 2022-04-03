@@ -6,40 +6,17 @@ Component({
     data: {
       type: Array,
       value: []
-    },
-    tapContent: {
-      type: Function,
-      value: function (e) {
-        const id = e.currentTarget.dataset.id
-        wx.navigateTo({
-          url: '../detail/detail?id=' + id
-        })
-      }
     }
   },
   data: {
     icon: constant.ICON
   },
   methods: {
-    /**
-     * 跳转用户详情
-     * @param {TargetDataset<{id: number}>} e 
-     */
-    toUser(e) {
-      const id = e.currentTarget.dataset.id
-      wx.navigateTo({
-        url: '../user/user?id=' + id
-      })
+    tapUser(e) {
+      this.triggerEvent('tapUser', e.currentTarget.dataset.id)
     },
-    /**
-     * 跳转分享详情
-     * @param {TargetDataset<{id: number}>} e 
-     */
-    toDetail(e) {
-      const id = e.currentTarget.dataset.id
-      wx.navigateTo({
-        url: '../detail/detail?id=' + id
-      })
-    }
+    tapContent(e) {
+      this.triggerEvent('tapContent', e.currentTarget.dataset.id)
+    },
   }
 })
