@@ -1,7 +1,0 @@
-const BaseResponse = () => {
-  
-}
-
-module.exports = {
-
-}

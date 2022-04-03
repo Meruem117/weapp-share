@@ -29,7 +29,7 @@ Page({
    */
   async loadCommentList() {
     let params = {
-      
+
     }
     const res = await commentService.getPages()
   }
