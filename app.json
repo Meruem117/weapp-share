@@ -2,11 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
+    "pages/detail/detail",
     "pages/plus/plus",
     "pages/mine/mine",
-    "pages/search/search",
-    "pages/detail/detail",
-    "pages/comment/comment",
     "pages/publish/publish",
     "pages/more/more",
     "pages/mydetail/mydetail",
