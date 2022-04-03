@@ -1,19 +1,19 @@
 // base
-declare type BaseResponse<T> = {
+export declare type BaseResponse<T> = {
   code: number,
   data: T,
   message: string
 }
 
-declare type PageResponseItem<T> = {
+export declare type PageResponseItem<T> = {
   list: T,
   total: number
 }
 
-declare type BasePageResponse<T> = BaseResponse<PageResponseItem<T>>
+export declare type BasePageResponse<T> = BaseResponse<PageResponseItem<T>>
 
 // user
-declare type UserItem = {
+export declare type UserItem = {
   id: number,
   name: string,
   avatar: string,
@@ -23,7 +23,7 @@ declare type UserItem = {
 }
 
 // comment
-declare type CommentItem = {
+export declare type CommentItem = {
   id: number,
   userId: number,
   userName: string,
@@ -33,7 +33,7 @@ declare type CommentItem = {
   likes: number
 }
 
-declare type CommentPageRequest = {
+export declare type CommentPageRequest = {
   userId: number,
   key: string,
   page: number,

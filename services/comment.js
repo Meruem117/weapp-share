@@ -1,4 +1,4 @@
-import request from '../utils/request'
+const request = require('../utils/request')
 
 /**
  * 加载全部

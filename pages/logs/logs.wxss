@@ -1,3 +1,5 @@
+/* pages/logs/logs.wxss */
+
 .log-list {
   display: flex;
   flex-direction: column;

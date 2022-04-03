@@ -2,7 +2,7 @@
   "name": "miniprogram-start",
   "author": "Meruem117",
   "version": "0.2.0",
-  "types": "./models/index.d",
+  "types": "./models/index.d.ts",
   "dependencies": {
     "@vant/weapp": "^1.10.2"
   }
