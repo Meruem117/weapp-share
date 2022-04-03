@@ -1,0 +1,7 @@
+const BaseResponse = () => {
+  
+}
+
+module.exports = {
+
+}

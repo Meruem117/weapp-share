@@ -1,0 +1,32 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/user",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

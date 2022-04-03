@@ -17,6 +17,9 @@ Page({
   onLoad: function () {
     this.load()
   },
+  /**
+   * 加载
+   */
   async load() {
     let params = {
       userId: 0,
@@ -29,6 +32,9 @@ Page({
       data: res.data.list,
     })
   },
+  /**
+   * 搜索
+   */
   onSearch() {
     if (this.data.key === '') {
       wx.showToast({
@@ -41,6 +47,10 @@ Page({
     })
     this.load()
   },
+  /**
+   * 搜索输入框监听
+   * @param {Event} e 
+   */
   onChange(e) {
     const value = e.detail
     this.setData({
@@ -48,6 +58,9 @@ Page({
       showAction: value !== ''
     })
   },
+  /**
+   * 取消搜索
+   */
   onCancel() {
     this.setData({
       key: '',
@@ -56,12 +69,20 @@ Page({
     })
     this.load()
   },
+  /**
+   * 跳转用户详情
+   * @param {Event} e 
+   */
   toUser(e) {
     const id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../user/user?id=' + id
     })
   },
+  /**
+   * 跳转分享详情
+   * @param {Event} e 
+   */
   toDetail(e) {
     const id = e.currentTarget.dataset.id
     wx.navigateTo({
