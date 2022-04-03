@@ -1,36 +1,24 @@
-page {
-  background: #E6E6FA;
-  height: 100%;
-}
+/* pages/index/index.wxss */
 
 .user {
-  /* background: #ffffff;
-  border-top: 1px solid #eee; */
   border-bottom: 5px solid purple;
   border-radius: 80rpx;
-  /* box-shadow: 0 2px 5px #eeeeee; */
   height: 400rpx;
   font-size: 35rpx;
-  left: 0;
 }
 
-.user_img {
-  position: relative;
-  display: inline-block;
+.user .info {
+  display: flex;
+  padding: 30rpx;
 }
 
-.user_img image {
-  display: inline-block;
+.user .info .avatar {
   width: 110rpx;
   height: 110rpx;
   border-radius: 50%;
-  top: 10rpx;
-  vertical-align: middle;
-  margin-left: 30rpx;
-  margin-top: 30rpx;
 }
 
-.user_name {
+.user .info .name {
   margin-left: 40rpx;
   font-size: 40rpx;
   font-weight: bold;

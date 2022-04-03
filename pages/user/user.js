@@ -1,19 +1,25 @@
 // pages/user/user.js
 const userService = require('../../services/user')
 const commentService = require('../../services/comment')
+const constant = require('../../utils/constant')
 
 Page({
   data: {
     id: '',
+    page: 1,
+    size: 3,
+    total: 0,
     data: {},
-    list: []
+    list: [],
+    GENDER: constant.GENDER
   },
   onLoad: function (options) {
     const id = options.id;
     this.setData({
       id
     })
-    this.loadUserInfo();
+    this.loadUserInfo()
+    this.loadCommentList()
   },
   /**
    * 加载用户信息
@@ -29,8 +35,15 @@ Page({
    */
   async loadCommentList() {
     let params = {
-
+      userId: this.data.id,
+      key: '',
+      page: this.data.page,
+      size: this.data.size
     }
-    const res = await commentService.getPages()
+    const res = await commentService.getPages(params)
+    this.setData({
+      list: res.data.list,
+      total: res.data.total
+    })
   }
 })
