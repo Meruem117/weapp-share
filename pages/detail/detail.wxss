@@ -84,6 +84,7 @@
 
 .comment button {
   padding: 5rpx 30rpx;
-  font-size: 30rpx;
   text-align: center;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
 }
