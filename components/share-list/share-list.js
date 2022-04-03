@@ -6,6 +6,15 @@ Component({
     data: {
       type: Array,
       value: []
+    },
+    tapContent: {
+      type: Function,
+      value: function (e) {
+        const id = e.currentTarget.dataset.id
+        wx.navigateTo({
+          url: '../detail/detail?id=' + id
+        })
+      }
     }
   },
   data: {
@@ -29,7 +38,7 @@ Component({
     toDetail(e) {
       const id = e.currentTarget.dataset.id
       wx.navigateTo({
-        url: '../detail/detail?cid=' + id
+        url: '../detail/detail?id=' + id
       })
     }
   }

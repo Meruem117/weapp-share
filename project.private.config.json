@@ -29,7 +29,7 @@
         {
           "name": "",
           "pathName": "pages/detail/detail",
-          "query": "id=1",
+          "query": "id=3",
           "scene": null,
           "launchMode": "default"
         }
