@@ -56,23 +56,16 @@ Page({
     })
     this.load()
   },
+  toUser(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../user/user?id=' + id
+    })
+  },
   toDetail(e) {
     const id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../detail/detail?cid=' + id
     })
-  },
-  toUser(e) {
-    let uid = e.currentTarget.dataset.uid;
-    wx.navigateTo({
-      url: '../user/user?uid=' + uid
-    })
-  },
-  toComment(e) {
-    let tp = e.currentTarget.dataset.tp;
-    let aid = e.currentTarget.dataset.cid;
-    wx.navigateTo({
-      url: '../detail/detail?tp=' + tp + '&cid=' + aid
-    })
-  },
+  }
 })

@@ -3,9 +3,9 @@
   <van-search value="{{key}}" shape="round" show-action="{{showAction}}" background="var(--bg-light)" placeholder="请输入关键词搜索" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
   <scroll-view scroll-y class="scroll">
     <view wx:for="{{data}}" wx:key="id" class="item">
-      <view class="user" bindtap="toUser" data-uid="{{item.userId}}">
-        <image src="{{item.avatar}}"></image>
-        <text>{{item.userName}}</text>
+      <view class="user">
+        <image src="{{item.avatar}}" bindtap="toUser" data-id="{{item.userId}}"></image>
+        <text bindtap="toUser" data-id="{{item.userId}}">{{item.userName}}</text>
       </view>
       <view class="content">
         <text bindtap="toDetail" data-id="{{item.id}}">{{item.content}}</text>
@@ -14,7 +14,7 @@
             <image src="{{item.islike ? image.like_ : image.like}}"></image>
             <text>{{item.likes}}</text>
           </view>
-          <view bindtap="toComment" data-tp="msg" data-cid="{{item.id}}" class="action">
+          <view class="action" bindtap="toDetail" data-id="{{item.id}}">
             <image src="{{image.comment}}"></image>
           </view>
         </view>
