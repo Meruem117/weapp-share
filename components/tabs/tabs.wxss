@@ -1,0 +1,21 @@
+.tab {
+  font-size: 30rpx;
+}
+
+.tab-title {
+  display: flex;
+  padding: 15rpx;
+  height: 100rpx;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  color: purple;
+  border-bottom: 8rpx solid purple;
+}
