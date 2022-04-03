@@ -16,8 +16,8 @@
           "name": "pages/index/index",
           "pathName": "pages/index/index",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "",
@@ -25,6 +25,13 @@
           "query": "id=1",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/detail/detail",
+          "query": "id=1",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }

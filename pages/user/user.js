@@ -5,7 +5,7 @@ const constant = require('../../utils/constant')
 
 Page({
   data: {
-    id: '',
+    id: 0,
     page: 1,
     size: 3,
     total: 0,
@@ -14,10 +14,9 @@ Page({
     gender: constant.GENDER,
     icon: constant.ICON
   },
-  onLoad: function (options) {
-    const id = options.id;
+  onLoad: function (option) {
     this.setData({
-      id
+      id: option.id
     })
     this.loadUserInfo()
     this.loadCommentList()

@@ -18,7 +18,7 @@ declare type TargetDataset<T> = {
   }
 }
 // user
-export declare type UserItem = {
+declare type UserItem = {
   id: number,
   name: string,
   avatar: string,
@@ -28,7 +28,7 @@ export declare type UserItem = {
 }
 
 // comment
-export declare type CommentItem = {
+declare type CommentItem = {
   id: number,
   userId: number,
   userName: string,
@@ -38,9 +38,15 @@ export declare type CommentItem = {
   likes: number
 }
 
-export declare type CommentPageRequest = {
+declare type CommentPageRequest = {
   userId: number,
   key: string,
+  page: number,
+  size: number
+}
+
+declare type commentDetailPageRequest = {
+  id: number,
   page: number,
   size: number
 }

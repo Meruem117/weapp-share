@@ -1,6 +1,4 @@
-page {
-  background: #E6E6FA;
-}
+/* pages/detail/detail.wxss */
 
 .user_item {
   width: 100%;
