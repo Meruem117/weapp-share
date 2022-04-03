@@ -2,7 +2,6 @@
   "navigationBarTitleText": "Share",
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
-    "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index"
+    "share-list": "/components/share-list/share-list"
   }
 }

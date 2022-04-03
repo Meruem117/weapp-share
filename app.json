@@ -23,20 +23,20 @@
     "list": [{
         "pagePath": "pages/index/index",
         "text": "",
-        "iconPath": "icon/home.png",
-        "selectedIconPath": "icon/home_.png"
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home_.png"
       },
       {
         "pagePath": "pages/plus/plus",
         "text": "",
-        "iconPath": "icon/plus.png",
-        "selectedIconPath": "icon/plus_.png"
+        "iconPath": "images/icons/plus.png",
+        "selectedIconPath": "images/icons/plus_.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "",
-        "iconPath": "icon/mine.png",
-        "selectedIconPath": "icon/mine_.png"
+        "iconPath": "images/icons/mine.png",
+        "selectedIconPath": "images/icons/mine_.png"
       }
     ]
   },

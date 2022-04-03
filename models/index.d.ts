@@ -1,17 +1,22 @@
 // base
-export declare type BaseResponse<T> = {
+declare type BaseResponse<T> = {
   code: number,
   data: T,
   message: string
 }
 
-export declare type PageResponseItem<T> = {
+declare type PageResponseItem<T> = {
   list: T,
   total: number
 }
 
-export declare type BasePageResponse<T> = BaseResponse<PageResponseItem<T>>
+declare type BasePageResponse<T> = BaseResponse<PageResponseItem<T>>
 
+declare type TargetDataset<T> = {
+  currentTarget: {
+    dataset: T
+  }
+}
 // user
 export declare type UserItem = {
   id: number,

@@ -68,7 +68,7 @@ Page({
   },
   /**
    * 跳转用户详情
-   * @param {Event} e 
+   * @param {TargetDataset<{id: number}>} e 
    */
   toUser(e) {
     const id = e.currentTarget.dataset.id

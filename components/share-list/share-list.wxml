@@ -1,0 +1,21 @@
+<!--components/share-list/share-list.wxml-->
+<scroll-view scroll-y class="scroll">
+  <view wx:for="{{data}}" wx:key="id" class="item">
+    <view class="user">
+      <image src="{{item.avatar}}" bindtap="toUser" data-id="{{item.userId}}"></image>
+      <text bindtap="toUser" data-id="{{item.userId}}">{{item.userName}}</text>
+    </view>
+    <view class="content">
+      <text bindtap="toDetail" data-id="{{item.id}}">{{item.content}}</text>
+      <view class="actions">
+        <view class="action">
+          <image src="{{item.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
+          <text>{{item.likes}}</text>
+        </view>
+        <view class="action" bindtap="toDetail" data-id="{{item.id}}">
+          <image src="{{icon.COMMENT}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
