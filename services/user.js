@@ -1,18 +1,18 @@
-const {
-  API_HOST
-} = require('../constant/index')
+const request = require('../utils/request')
 
-function getAll() {
-  let data = []
-  wx.request({
-    url: API_HOST + '/user/all',
-    success(res) {
-      data = res.data
-    }
+async function getAll() {
+  const data = await request.get('/user/all')
+  return data
+}
+
+async function getUserById(id) {
+  const data = await request.get('/user/get', {
+    id
   })
   return data
 }
 
 module.exports = {
-  getAll
+  getAll,
+  getUserById
 }

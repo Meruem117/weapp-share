@@ -10,16 +10,13 @@
       <view class="content">
         <text bindtap="toDetail" data-id="{{item.id}}">{{item.content}}</text>
         <view class="actions">
-          <view bindtap="toLike" data-like="{{item.islike}}" data-id="{{item.info_id}}" data-num="{{item.likes}}" class="action">
+          <view class="action">
             <image src="{{item.islike ? image.like_ : image.like}}"></image>
             <text>{{item.likes}}</text>
           </view>
           <view bindtap="toComment" data-tp="msg" data-cid="{{item.id}}" class="action">
             <image src="{{image.comment}}"></image>
           </view>
-          <!-- <view bindtap="toCollect" data-collect="{{item.iscollect}}" data-id="{{item.id}}" class="action">
-            <image src="{{item.iscollect ? image.collect_ : image.collect}}"></image>
-          </view> -->
         </view>
       </view>
     </view>

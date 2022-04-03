@@ -19,16 +19,23 @@ Page({
   },
   async load() {
     let params = {
+      userId: 0,
       key: this.data.key,
       page: this.data.page,
       size: this.data.size
     }
-    const res = await commentService.getSearchPages(params)
+    const res = await commentService.getPages(params)
     this.setData({
       data: res.data.list,
     })
   },
   onSearch() {
+    if (this.data.key === '') {
+      wx.showToast({
+        title: 'Please input search content',
+        icon: 'none'
+      })
+    }
     this.setData({
       page: 1
     })
