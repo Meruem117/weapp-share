@@ -9,9 +9,9 @@ Page({
     size: 3,
     showAction: false,
     image: {
-      like: '../../icon/like.png',
-      like_: '../../icon/like_.png',
-      comment: '../../icon/comment.png'
+      like: '/images/icon/like.png',
+      like_: '/images/icon/like_.png',
+      comment: '/images/icon/comment.png'
     }
   },
   onLoad: function () {
