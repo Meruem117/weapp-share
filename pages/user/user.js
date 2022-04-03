@@ -11,7 +11,7 @@ Page({
     total: 0,
     data: {},
     list: [],
-    GENDER: constant.GENDER
+    gender: constant.GENDER
   },
   onLoad: function (options) {
     const id = options.id;

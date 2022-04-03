@@ -4,7 +4,7 @@
     <image class="avatar" src="{{data.avatar}}" />
     <view class="info">
       <view class="flex-row">
-        <view class="{{data.gender === GENDER.MALE ? 'name iconfont icon-male' : 'name iconfont icon-female'}}">
+        <view class="{{data.gender === gender.MALE ? 'name iconfont icon-male' : 'name iconfont icon-female'}}">
           {{data.name}}
         </view>
         <view class="location">{{data.location}}</view>

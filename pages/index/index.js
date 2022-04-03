@@ -1,5 +1,6 @@
 // pages/index/index.js
 const commentService = require('../../services/comment')
+const constant = require('../../utils/constant')
 
 Page({
   data: {
@@ -8,11 +9,7 @@ Page({
     page: 1,
     size: 3,
     showAction: false,
-    image: {
-      like: '/images/icon/like.png',
-      like_: '/images/icon/like_.png',
-      comment: '/images/icon/comment.png'
-    }
+    icon: constant.ICON
   },
   onLoad: function () {
     this.load()

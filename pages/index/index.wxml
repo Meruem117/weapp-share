@@ -11,11 +11,11 @@
         <text bindtap="toDetail" data-id="{{item.id}}">{{item.content}}</text>
         <view class="actions">
           <view class="action">
-            <image src="{{item.islike ? image.like_ : image.like}}"></image>
+            <image src="{{item.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
             <text>{{item.likes}}</text>
           </view>
           <view class="action" bindtap="toDetail" data-id="{{item.id}}">
-            <image src="{{image.comment}}"></image>
+            <image src="{{icon.COMMENT}}"></image>
           </view>
         </view>
       </view>
