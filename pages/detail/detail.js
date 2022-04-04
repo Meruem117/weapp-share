@@ -6,7 +6,7 @@ Page({
   data: {
     id: 0,
     page: 1,
-    size: 4,
+    size: 3,
     data: {},
     list: [],
     total: 0,
@@ -17,6 +17,7 @@ Page({
   onLoad: function (option) {
     this.setData({
       id: option.id,
+      commentId: option.id
     })
     this.loadDetail()
     this.loadCommentList()
@@ -80,6 +81,20 @@ Page({
    * 评论
    */
   onComment() {
-    console.log(this.data.content)
+    let comment = {
+      userId: 2,
+      commentId: this.data.commentId,
+      content: this.data.content,
+    }
+    commentService.addComment(comment).then(() => {
+      wx.showToast({
+        title: 'Comment Success',
+        icon: 'success'
+      })
+      this.setData({
+        content: ''
+      })
+      this.loadCommentList()
+    })
   },
 })

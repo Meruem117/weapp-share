@@ -31,8 +31,19 @@ async function getCommentById(id) {
   return data
 }
 
+/**
+ * 新增评论
+ * @param {CommentItem} comment
+ * @returns {Promise<BaseResponse<Number>>}
+ */
+async function addComment(comment) {
+  const data = await request.post('/comment/add', comment)
+  return data
+}
+
 module.exports = {
   getAll,
   getPages,
-  getCommentById
+  getCommentById,
+  addComment
 }

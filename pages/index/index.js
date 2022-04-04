@@ -7,7 +7,7 @@ Page({
     data: [],
     key: '',
     page: 1,
-    size: 3,
+    size: 4,
     showAction: false,
     icon: constant.ICON
   },
