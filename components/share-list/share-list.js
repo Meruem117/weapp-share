@@ -15,7 +15,6 @@ Component({
   data: {
     showRefresh: false,
     showLoading: false,
-    showFinished: false,
     icon: constant.ICON
   },
   methods: {
@@ -38,12 +37,6 @@ Component({
             showLoading: false
           })
         }, 500)
-      } else {
-        if (this.data.showFinished === false) {
-          this.setData({
-            showFinished: true
-          })
-        }
       }
     },
     tapUser(e) {

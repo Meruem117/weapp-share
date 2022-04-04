@@ -22,7 +22,7 @@
   <view class="loading" wx:if="{{showLoading}}">
     <van-loading type="spinner" size="20">Loading...</van-loading>
   </view>
-  <view class="finished" wx:if="{{showFinished}}">
+  <view class="finished" wx:if="{{!hasMore}}">
     <text>Nothing more...</text>
   </view>
 </scroll-view>

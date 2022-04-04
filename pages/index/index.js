@@ -4,11 +4,12 @@ const constant = require('../../utils/constant')
 
 Page({
   data: {
-    data: [],
+    list: [],
     key: '',
     page: 1,
     size: 5,
     showAction: false,
+    hasMore: true,
     icon: constant.ICON
   },
   onLoad: function () {
@@ -26,9 +27,42 @@ Page({
       size: this.data.size
     }
     const res = await commentService.getPages(params)
+    if (res.data.list.length > 0) {
+      this.setData({
+        list: this.data.list.concat(res.data.list)
+      })
+      if (res.data.list.length < this.data.size) {
+        this.setData({
+          hasMore: false
+        })
+      }
+    } else {
+      this.setData({
+        hasMore: false
+      })
+    }
+  },
+  /**
+   * 下拉刷新
+   */
+  onRefresh() {
     this.setData({
-      data: res.data.list,
+      list: [],
+      page: 1,
+      hasMore: true
     })
+    this.load()
+  },
+  /**
+   * 加载更多
+   */
+  loadMore() {
+    if (this.data.hasMore) {
+      this.setData({
+        page: ++this.data.page
+      })
+      this.load()
+    }
   },
   /**
    * 搜索
