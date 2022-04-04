@@ -2,17 +2,17 @@
 <view class="container">
   <view class="detail">
     <view class="user">
-      <image src="{{data.avatar}}" bindtap="tapUser" data-id="{{data.userId}}"></image>
-      <text bindtap="tapUser" data-id="{{data.userId}}">{{data.userName}}</text>
+      <image src="{{data.avatar}}" bindtap="toUser" data-id="{{data.userId}}"></image>
+      <text bindtap="toUser" data-id="{{data.userId}}">{{data.userName}}</text>
     </view>
     <view class="content">
-      <text bindtap="tapContent" data-id="{{data.id}}">{{data.content}}</text>
+      <text>{{data.content}}</text>
       <view class="actions">
         <view class="action">
           <image src="{{data.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
           <text>{{data.likes}}</text>
         </view>
-        <view class="action" bindtap="tapContent" data-id="{{data.id}}">
+        <view class="action">
           <image src="{{icon.COMMENT}}"></image>
         </view>
         <view class="time">{{data.time}}</view>
@@ -20,7 +20,7 @@
     </view>
   </view>
   <view class="list">
-    <comment-list data="{{list}}" bind:tapUser="toUser" />
+    <comment-list data="{{list}}" bind:tapUser="toCommentUser" />
   </view>
   <view class="comment">
     <view class="input">

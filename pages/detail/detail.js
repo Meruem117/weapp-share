@@ -49,9 +49,19 @@ Page({
   },
   /**
    * 跳转用户详情
-   * @param {{detail: number}} e 
+   * @param {TargetDataset<{id: number}>} e 
    */
   toUser(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../user/user?id=' + id
+    })
+  },
+  /**
+   * 跳转评论用户详情
+   * @param {{detail: number}} e 
+   */
+  toCommentUser(e) {
     const id = e.detail
     wx.navigateTo({
       url: '../user/user?id=' + id
