@@ -30,7 +30,7 @@ Page({
     if (res.data.list.length > 0) {
       this.setData({
         list: this.data.list.concat(res.data.list),
-        hasMore: res.data.list.length === this.data.size
+        hasMore: res.data.total > this.data.size && res.data.list.length === this.data.size
       })
     } else {
       this.setData({

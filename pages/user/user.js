@@ -47,7 +47,7 @@ Page({
       this.setData({
         list: this.data.list.concat(res.data.list),
         total: res.data.total,
-        hasMore: res.data.list.length === this.data.size
+        hasMore: res.data.total > this.data.size && res.data.list.length === this.data.size
       })
     } else {
       this.setData({
