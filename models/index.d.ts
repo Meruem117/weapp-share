@@ -34,6 +34,8 @@ declare type CommentItem = {
   userName: string,
   avatar: string,
   commentId: number,
+  replyId: number,
+  replyName: string,
   content: string,
   likes: number
 }
