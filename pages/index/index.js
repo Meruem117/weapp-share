@@ -20,6 +20,7 @@ Page({
   async load() {
     let params = {
       userId: 0,
+      commentId: 0,
       key: this.data.key,
       page: this.data.page,
       size: this.data.size

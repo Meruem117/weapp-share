@@ -36,6 +36,7 @@ Page({
   async loadCommentList() {
     let params = {
       userId: this.data.id,
+      commentId: 0,
       key: '',
       page: this.data.page,
       size: this.data.size

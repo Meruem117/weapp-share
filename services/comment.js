@@ -31,19 +31,8 @@ async function getCommentById(id) {
   return data
 }
 
-/**
- * 加载分享评论分页列表
- * @param {commentDetailPageRequest} commentDetailPageRequest
- * @returns {Promise<BasePageResponse<CommentItem[]>>}
- */
-async function getCommentListById(commentDetailPageRequest) {
-  const data = await request.get('/comment/comment', commentDetailPageRequest)
-  return data
-}
-
 module.exports = {
   getAll,
   getPages,
-  getCommentById,
-  getCommentListById
+  getCommentById
 }

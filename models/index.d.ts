@@ -40,6 +40,7 @@ declare type CommentItem = {
 
 declare type CommentPageRequest = {
   userId: number,
+  commentId: number,
   key: string,
   page: number,
   size: number

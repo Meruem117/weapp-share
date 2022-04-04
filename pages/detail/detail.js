@@ -10,6 +10,7 @@ Page({
     data: {},
     list: [],
     total: 0,
+    commentId: 0,
     content: '',
     icon: constant.ICON
   },
@@ -34,11 +35,13 @@ Page({
    */
   async loadCommentList() {
     let params = {
-      id: this.data.id,
+      userId: 0,
+      commentId: this.data.id,
+      key: '',
       page: this.data.page,
       size: this.data.size
     }
-    const res = await commentService.getCommentListById(params)
+    const res = await commentService.getPages(params)
     this.setData({
       list: res.data.list,
       total: res.data.total
