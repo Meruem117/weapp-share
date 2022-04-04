@@ -13,7 +13,7 @@ Component({
     },
     height: {
       type: String,
-      value: '1200rpx'
+      value: '1000rpx'
     }
   },
   data: {

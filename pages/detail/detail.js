@@ -84,6 +84,8 @@ Page({
     let comment = {
       userId: 2,
       commentId: this.data.commentId,
+      replyId: this.data.data.userId,
+      replyName: this.data.data.userName,
       content: this.data.content,
     }
     commentService.addComment(comment).then(() => {
