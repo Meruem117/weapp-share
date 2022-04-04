@@ -7,10 +7,11 @@ Page({
   data: {
     id: 0,
     page: 1,
-    size: 3,
-    total: 0,
+    size: 4,
     data: {},
     list: [],
+    total: 0,
+    hasMore: true,
     gender: constant.GENDER,
     icon: constant.ICON
   },
@@ -42,10 +43,40 @@ Page({
       size: this.data.size
     }
     const res = await commentService.getPages(params)
+    if (res.data.list.length > 0) {
+      this.setData({
+        list: this.data.list.concat(res.data.list),
+        total: res.data.total,
+        hasMore: res.data.list.length === this.data.size
+      })
+    } else {
+      this.setData({
+        hasMore: false
+      })
+    }
+  },
+  /**
+   * 下拉刷新
+   */
+  onRefresh() {
     this.setData({
-      list: res.data.list,
-      total: res.data.total
+      list: [],
+      total: 0,
+      page: 1,
+      hasMore: true
     })
+    this.loadCommentList()
+  },
+  /**
+   * 加载更多
+   */
+  loadMore() {
+    if (this.data.hasMore) {
+      this.setData({
+        page: ++this.data.page
+      })
+      this.loadCommentList()
+    }
   },
   /**
    * 跳转聊天框

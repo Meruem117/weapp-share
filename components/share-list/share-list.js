@@ -10,6 +10,10 @@ Component({
     hasMore: {
       type: Boolean,
       value: true
+    },
+    height: {
+      type: String,
+      value: '1200rpx'
     }
   },
   data: {

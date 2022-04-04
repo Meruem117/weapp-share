@@ -1,5 +1,5 @@
 <!--components/share-list/share-list.wxml-->
-<scroll-view class="scroll" scroll-y enable-back-to-top refresher-enabled refresher-triggered="{{showRefresh}}" bindrefresherrefresh="onRefresh" bindscrolltolower="loadMore">
+<scroll-view class="scroll" style="height: {{height}};" scroll-y enable-back-to-top refresher-enabled refresher-triggered="{{showRefresh}}" bindrefresherrefresh="onRefresh" bindscrolltolower="loadMore">
   <view wx:for="{{data}}" wx:key="id" class="item">
     <view class="user">
       <image src="{{item.avatar}}" bindtap="tapUser" data-id="{{item.userId}}"></image>

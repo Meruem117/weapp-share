@@ -29,13 +29,9 @@ Page({
     const res = await commentService.getPages(params)
     if (res.data.list.length > 0) {
       this.setData({
-        list: this.data.list.concat(res.data.list)
+        list: this.data.list.concat(res.data.list),
+        hasMore: res.data.list.length === this.data.size
       })
-      if (res.data.list.length < this.data.size) {
-        this.setData({
-          hasMore: false
-        })
-      }
     } else {
       this.setData({
         hasMore: false
