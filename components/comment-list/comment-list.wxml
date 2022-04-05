@@ -13,7 +13,7 @@
           <image src="{{item.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
           <text>{{item.likes}}</text>
         </view>
-        <view class="action" bindtap="tapComment" data-id="{{item.userId}}" data-name="{{item.userName}}">
+        <view class="action" bindtap="tapComment" data-id="{{item.id}}" data-userid="{{item.userId}}" data-username="{{item.userName}}">
           <image src="{{icon.COMMENT}}"></image>
         </view>
         <view class="time">{{item.time}}</view>

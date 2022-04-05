@@ -62,12 +62,6 @@
   color: gray;
 }
 
-.list {
-  width: 90%;
-  float: right;
-  margin-right: 10rpx;
-}
-
 .comment {
   width: 100%;
   position: absolute;

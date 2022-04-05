@@ -10,6 +10,7 @@ Page({
     data: {},
     list: [],
     total: 0,
+    subCommentId: 0,
     replyId: 0,
     replyName: '',
     content: '',
@@ -19,7 +20,8 @@ Page({
   },
   onLoad: function (option) {
     this.setData({
-      id: option.id
+      id: option.id,
+      subCommentId: option.id
     })
     this.loadDetail()
     this.loadCommentList()
@@ -106,6 +108,7 @@ Page({
    */
   tapMainComment() {
     this.setData({
+      subCommentId: this.data.id,
       replyId: this.data.data.userId,
       replyName: this.data.data.userName,
       focus: true
@@ -113,12 +116,13 @@ Page({
   },
   /** 
    * 点击列表评论
-   * @param {{detail: {id: number,name: string}}} e 
+   * @param {{detail: {id: number,userid: number,username: string}}} e 
    */
   tapSubComment(e) {
     this.setData({
-      replyId: e.detail.id,
-      replyName: e.detail.name,
+      subCommentId: e.detail.id,
+      replyId: e.detail.userid,
+      replyName: e.detail.username,
       focus: true
     })
   },
@@ -138,6 +142,7 @@ Page({
     let comment = {
       userId: 2,
       commentId: this.data.id,
+      subCommentId: this.data.subCommentId,
       replyId: this.data.replyId,
       replyName: this.data.replyName,
       content: this.data.content,
