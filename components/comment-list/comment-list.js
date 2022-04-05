@@ -46,8 +46,8 @@ Component({
     tapUser(e) {
       this.triggerEvent('tapUser', e.currentTarget.dataset.id)
     },
-    tapContent(e) {
-      this.triggerEvent('tapContent', e.currentTarget.dataset.id)
+    tapComment(e) {
+      this.triggerEvent('tapComment', e.currentTarget.dataset.id)
     },
   }
 })

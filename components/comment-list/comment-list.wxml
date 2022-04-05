@@ -6,13 +6,13 @@
       <text bindtap="tapUser" data-id="{{item.userId}}">{{item.userName}}</text>
     </view>
     <view class="content">
-      <text bindtap="tapContent" data-id="{{item.id}}">{{item.content}}</text>
+      <text>{{item.content}}</text>
       <view class="actions">
         <view class="action">
           <image src="{{item.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
           <text>{{item.likes}}</text>
         </view>
-        <view class="action" bindtap="tapContent" data-id="{{item.id}}">
+        <view class="action" bindtap="tapComment" data-id="{{item.id}}">
           <image src="{{icon.COMMENT}}"></image>
         </view>
         <view class="time">{{item.time}}</view>

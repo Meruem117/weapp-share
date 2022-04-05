@@ -12,6 +12,7 @@ Page({
     total: 0,
     commentId: 0,
     content: '',
+    focus: false,
     icon: constant.ICON
   },
   onLoad: function (option) {
@@ -67,6 +68,13 @@ Page({
     wx.navigateTo({
       url: '../user/user?id=' + id
     })
+  },
+  /** 
+   * 点击评论
+   * @param {TargetDataset<{id: number}>} e 
+   */
+  tapComment(e) {
+    
   },
   /**
    * 评论框监听
