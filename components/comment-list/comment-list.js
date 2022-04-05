@@ -13,7 +13,7 @@ Component({
     },
     height: {
       type: String,
-      value: '1000rpx'
+      value: '950rpx'
     }
   },
   data: {
@@ -47,7 +47,7 @@ Component({
       this.triggerEvent('tapUser', e.currentTarget.dataset.id)
     },
     tapComment(e) {
-      this.triggerEvent('tapComment', e.currentTarget.dataset.id)
+      this.triggerEvent('tapComment', e.currentTarget.dataset)
     },
   }
 })

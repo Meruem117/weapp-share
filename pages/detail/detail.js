@@ -6,19 +6,20 @@ Page({
   data: {
     id: 0,
     page: 1,
-    size: 3,
+    size: 4,
     data: {},
     list: [],
     total: 0,
-    commentId: 0,
+    replyId: 0,
+    replyName: '',
     content: '',
     focus: false,
+    hasMore: true,
     icon: constant.ICON
   },
   onLoad: function (option) {
     this.setData({
-      id: option.id,
-      commentId: option.id
+      id: option.id
     })
     this.loadDetail()
     this.loadCommentList()
@@ -30,6 +31,8 @@ Page({
     const res = await commentService.getCommentById(this.data.id)
     this.setData({
       data: res.data,
+      replyId: res.data.userId,
+      replyName: res.data.userName
     })
   },
   /**
@@ -44,10 +47,39 @@ Page({
       size: this.data.size
     }
     const res = await commentService.getPages(params)
+    if (res.data.list.length > 0) {
+      this.setData({
+        list: this.data.list.concat(res.data.list),
+        total: res.data.total,
+        hasMore: res.data.total > this.data.size && res.data.list.length === this.data.size
+      })
+    } else {
+      this.setData({
+        hasMore: false
+      })
+    }
+  },
+  /**
+   * 下拉刷新评论列表
+   */
+  onRefresh() {
     this.setData({
-      list: res.data.list,
-      total: res.data.total
+      list: [],
+      page: 1,
+      hasMore: true
     })
+    this.loadCommentList()
+  },
+  /**
+   * 加载更多评论
+   */
+  loadMore() {
+    if (this.data.hasMore) {
+      this.setData({
+        page: ++this.data.page
+      })
+      this.loadCommentList()
+    }
   },
   /**
    * 跳转用户详情
@@ -70,11 +102,25 @@ Page({
     })
   },
   /** 
-   * 点击评论
-   * @param {TargetDataset<{id: number}>} e 
+   * 点击主评论
    */
-  tapComment(e) {
-    
+  tapMainComment() {
+    this.setData({
+      replyId: this.data.data.userId,
+      replyName: this.data.data.userName,
+      focus: true
+    })
+  },
+  /** 
+   * 点击列表评论
+   * @param {{detail: {id: number,name: string}}} e 
+   */
+  tapSubComment(e) {
+    this.setData({
+      replyId: e.detail.id,
+      replyName: e.detail.name,
+      focus: true
+    })
   },
   /**
    * 评论框监听
@@ -91,9 +137,9 @@ Page({
   onComment() {
     let comment = {
       userId: 2,
-      commentId: this.data.commentId,
-      replyId: this.data.data.userId,
-      replyName: this.data.data.userName,
+      commentId: this.data.id,
+      replyId: this.data.replyId,
+      replyName: this.data.replyName,
       content: this.data.content,
     }
     commentService.addComment(comment).then(() => {
@@ -102,7 +148,8 @@ Page({
         icon: 'success'
       })
       this.setData({
-        content: ''
+        content: '',
+        focus: false
       })
       this.loadCommentList()
     })

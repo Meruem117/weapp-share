@@ -12,15 +12,16 @@
           <image src="{{data.islike ? icon.LIKE_ACTIVE : icon.LIKE_INACTIVE}}"></image>
           <text>{{data.likes}}</text>
         </view>
-        <view class="action">
+        <view class="action" bindtap="tapMainComment">
           <image src="{{icon.COMMENT}}"></image>
+          <text>{{total}}</text>
         </view>
         <view class="time">{{data.time}}</view>
       </view>
     </view>
   </view>
   <view class="list">
-    <comment-list data="{{list}}" bind:tapUser="toCommentUser" />
+    <comment-list data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toCommentUser" bind:tapComment="tapSubComment" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
   </view>
   <view class="comment">
     <view class="input">
