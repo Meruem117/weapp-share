@@ -1,5 +1,5 @@
-# wechat_miniprogram_share
-A wechat mini program about sharing(first wechat mini porgram)
+# wechat-miniprogram-share
+A wechat miniprogram about sharing(first wechat mini porgram)
 
 # SHARE
 ### 一、首页
