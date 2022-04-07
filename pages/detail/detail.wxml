@@ -20,7 +20,8 @@
       </view>
     </view>
   </view>
-  <comment-list data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toCommentUser" bind:tapComment="tapSubComment" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
+  <van-empty wx:if="{{list.length === 0}}" description="暂无评论" />
+  <comment-list wx:else data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toCommentUser" bind:tapComment="tapSubComment" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
   <view class="comment">
     <view class="input">
       <van-field value="{{content}}" focus="{{focus}}" placeholder="评论一下" clearable bind:change="onChange" />

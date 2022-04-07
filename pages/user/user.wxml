@@ -15,4 +15,5 @@
   </view>
   <view class="total">{{total}} Shares</view>
 </view>
-<share-list data="{{list}}" hasMore="{{hasMore}}" height="1000rpx" bind:tapContent="toDetail" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
+<van-empty wx:if="{{list.length === 0}}" description="暂无数据" />
+<share-list wx:else data="{{list}}" hasMore="{{hasMore}}" height="1000rpx" bind:tapContent="toDetail" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />

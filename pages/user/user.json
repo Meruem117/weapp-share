@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index",
     "share-list": "/components/share-list/share-list"
   }
 }

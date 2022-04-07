@@ -1,5 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
   <van-search value="{{key}}" shape="round" show-action="{{showAction}}" background="var(--bg-light)" placeholder="请输入关键词搜索" bind:search="onSearch" bind:change="onChange" bind:cancel="onCancel" />
-  <share-list data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toUser" bind:tapContent="toDetail" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
+  <van-empty wx:if="{{list.length === 0}}" description="暂无数据" />
+  <share-list wx:else data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toUser" bind:tapContent="toDetail" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
 </view>
