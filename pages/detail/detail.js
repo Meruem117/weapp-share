@@ -15,6 +15,7 @@ Page({
     replyName: '',
     content: '',
     focus: false,
+    isMain: true,
     hasMore: true,
     icon: constant.ICON
   },
@@ -111,7 +112,8 @@ Page({
       subCommentId: this.data.id,
       replyId: this.data.data.userId,
       replyName: this.data.data.userName,
-      focus: true
+      focus: true,
+      isMain: true
     })
   },
   /** 
@@ -123,7 +125,8 @@ Page({
       subCommentId: e.detail.id,
       replyId: e.detail.userid,
       replyName: e.detail.username,
-      focus: true
+      focus: true,
+      isMain: false
     })
   },
   /**
@@ -139,6 +142,13 @@ Page({
    * 评论
    */
   onComment() {
+    if (!this.data.content) {
+      wx.showToast({
+        title: '评论不能为空',
+        icon: 'none'
+      })
+      return
+    }
     let comment = {
       userId: 2,
       commentId: this.data.id,
@@ -149,7 +159,7 @@ Page({
     }
     commentService.addComment(comment).then(() => {
       wx.showToast({
-        title: 'Comment Success',
+        title: '评论成功',
         icon: 'success'
       })
       this.setData({
