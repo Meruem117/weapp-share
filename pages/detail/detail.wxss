@@ -57,7 +57,7 @@
 
 .detail .content .actions .time {
   margin-top: 10rpx;
-  margin-left: 100rpx;
+  margin-left: 80rpx;
   font-size: 30rpx;
   color: gray;
 }
@@ -68,7 +68,7 @@
   bottom: 0;
   display: flex;
   padding: 30rpx 0;
-  background-color: gainsboro;
+  background-color: #fff;
 }
 
 .comment .input {
