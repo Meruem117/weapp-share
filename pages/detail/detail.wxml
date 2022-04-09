@@ -24,7 +24,9 @@
   <comment-list wx:else data="{{list}}" hasMore="{{hasMore}}" bind:tapUser="toCommentUser" bind:tapComment="tapSubComment" bind:onRefresh="onRefresh" bind:loadMore="loadMore" />
   <view class="comment">
     <view class="input">
-      <van-field value="{{content}}" focus="{{focus}}" placeholder="{{isMain ? '评论一下' : '@' + replyName}}" clearable bind:change="onChange" />
+      <view class="border">
+        <van-field value="{{content}}" focus="{{focus}}" placeholder="{{isMain ? '评论一下' : '@' + replyName}}" clearable bind:change="onChange" />
+      </view>
     </view>
     <button type="primary" size="mini" bindtap="onComment">评论</button>
   </view>

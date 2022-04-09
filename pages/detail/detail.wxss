@@ -76,6 +76,11 @@
   padding-left: 30rpx;
 }
 
+.comment .input .border {
+  border: 5rpx solid gainsboro;
+  border-radius: 10rpx;
+}
+
 .comment button {
   padding: 10rpx 30rpx;
   text-align: center;
