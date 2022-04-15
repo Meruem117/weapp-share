@@ -49,8 +49,17 @@ declare type CommentPageRequest = {
   size: number
 }
 
-declare type commentDetailPageRequest = {
+// record
+declare type RecordItem = {
   id: number,
+  userId: number,
+  content: string,
+  time: string
+}
+
+declare type RecordPageRequest = {
+  userId: number,
+  key: string,
   page: number,
   size: number
 }
