@@ -1,23 +1,19 @@
-<block wx:for="{{user}}" wx:for-item="u" wx:if="{{u.user_id==0}}">
-  <view class="user">
-    <a>
-      <view class="user_img">
-        <image src="{{u.user_img}}"></image>
+<!--pages/mine/mine.wxml-->
+<view class="user">
+  <view class="detail">
+    <image class="avatar" src="{{data.avatar}}" />
+    <view class="info">
+      <view class="flex-row">
+        <view class="{{data.gender === gender.MALE ? 'name iconfont icon-male' : 'name iconfont icon-female'}}">
+          {{data.name}}
+        </view>
+        <view class="location">{{data.location}}</view>
       </view>
-      <text class="user_name iconfont icon-heart"> {{u.user_name}}</text>
-      <image src="../../icon/more.png" class="img_more" bindtap="toMore"></image>
-      <view class="user_from">
-        <text>{{u.city}} , {{u.country}}</text>
-      </view>
-      <view class="user_intro">
-        <text>{{u.introduction}}</text>
-      </view>
-      <view class="user_action">
-        <text>{{u.total}} Shares</text>
-      </view>
-    </a>
+      <view class="sign">{{data.sign}}</view>
+    </view>
+    <image class="message" src="{{icon.MESSAGE}}" bindtap="toMessage" />
   </view>
-</block>
+</view>
 
 <Tabs tabs="{{tabs}}" binditemChange="handleItemChange" class="tabs"></Tabs>
 <block wx:for="{{tabs}}" wx:for-item="t">

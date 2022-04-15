@@ -31,7 +31,8 @@ Page({
         "name": "私信",
         "isActive": false
       }
-    ]
+    ],
+    icon: constant.ICON
   },
   onLoad: function () {
     this.data.id = app.globalData.id

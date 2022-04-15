@@ -1,66 +1,69 @@
-page {
-  background: #E6E6FA;
-}
+/* pages/mine/mine.wxss */
 
 .user {
-  height: 400rpx;
-  font-size: 35rpx;
-  left: 0;
-  border-bottom: 5px solid purple;
-  border-radius: 60rpx;
-}
-
-.user_img {
+  height: 240rpx;
   position: relative;
-  display: inline-block;
+  margin-bottom: 30rpx;
+  border-radius: 80rpx;
+  border-bottom: 5px solid purple;
+  font-size: 35rpx;
 }
 
-.user_img image {
-  display: inline-block;
+.user .detail {
+  display: flex;
+  width: 100%;
+  padding: 30rpx;
+}
+
+.user .detail .avatar {
   width: 110rpx;
   height: 110rpx;
   border-radius: 50%;
-  top: 10rpx;
-  vertical-align: middle;
-  margin-left: 30rpx;
-  margin-top: 30rpx;
 }
 
-.user_name {
-  margin-left: 40rpx;
+.user .detail .info {
+  display: flex;
+  flex-direction: column;
+  width: 500rpx;
+  margin-left: 10rpx;
+}
+
+.user .detail .info .name {
+  margin-left: 30rpx;
   font-size: 40rpx;
   font-weight: bold;
 }
 
-.user_from {
-  margin-top: 30rpx;
-  margin-left: 40rpx;
-  font-size: 30rpx;
+.user .detail .info .location {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size: 25rpx;
   color: gray;
 }
 
-.user_intro {
-  margin-top: 30rpx;
-  margin-left: 40rpx;
+.user .detail .info .sign {
+  width: 100%;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
   font-size: 30rpx;
+  word-break: break-all;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
 }
 
-.user_action {
-  margin-top: 30rpx;
-  font-size: 45rpx;
+.user .detail .message {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
 }
 
-.user_action text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img_more {
-  margin-left: 320rpx;
-  display: inline-block;
-  width: 55rpx;
-  height: 55rpx;
+.user .total {
+  width: 100%;
+  position: absolute;
+  bottom: 10rpx;
+  text-align: center;
+  font-size: 35rpx;
 }
 
 .tabs {
