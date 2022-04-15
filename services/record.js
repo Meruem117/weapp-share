@@ -37,7 +37,7 @@ async function getRecordById(id) {
  * @returns {Promise<BaseResponse<Number>>}
  */
 async function addRecord(record) {
-  const data = await request.post('/record/add', comment)
+  const data = await request.post('/record/add', record)
   return data
 }
 
