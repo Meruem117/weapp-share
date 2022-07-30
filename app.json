@@ -10,7 +10,8 @@
     "pages/mydetail/mydetail",
     "pages/record/record",
     "pages/message/message",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/regist/regist"
   ],
   "window": {
     "backgroundTextStyle": "light",
