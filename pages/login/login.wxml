@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="main">
+  <van-cell-group>
+    <van-cell>
+      <van-field value="{{ username }}" left-icon="manager" type="text" placeholder="请输入用户名" border="{{false}}" data-param="username" bind:change="onChange" clearable />
+    </van-cell>
+    <van-cell>
+      <van-field value="{{ password }}" left-icon="lock" type="password" placeholder="请输入密码" border="{{false}}" data-param="password" bind:change="onChange" clearable />
+    </van-cell>
+  </van-cell-group>
+</view>
