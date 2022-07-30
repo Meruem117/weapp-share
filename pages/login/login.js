@@ -8,6 +8,7 @@ Page({
     username: '',
     password: ''
   },
+
   /**
    * 输入框监听
    * @param {*} event 
@@ -20,6 +21,30 @@ Page({
       [param]: event.detail
     })
   },
+  /**
+   * 登录
+   */
+  login() {
+    if (!this.data.username) {
+      wx.showToast({
+        title: '用户名不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if (!this.data.password) {
+      wx.showToast({
+        title: '密码不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    console.log(this.data)
+  },
+  /**
+   * 注册
+   */
+  regist() {},
 
   /**
    * 生命周期函数--监听页面加载

@@ -1,5 +1,33 @@
 /* pages/login/login.wxss */
 .main {
-  width: 90%;
+  width: 100%;
   margin: 30rpx auto;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container .btn {
+  width: 48%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  letter-spacing: 5rpx;
+  border: 1rpx solid #00BFFF;
+  border-radius: 15rpx;
+  background-color: #00BFFF;
+}
+
+.btn-container .btn.plain {
+  color: #00BFFF;
+  background-color: #f6f6f6;
+}
+
+.cell-index--van-cell__left-icon {
+  color: #00BFFF !important;
 }
