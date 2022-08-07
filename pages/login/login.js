@@ -1,4 +1,6 @@
 // pages/login/login.js
+const loginService = require('../../services/login')
+
 Page({
 
   /**
@@ -39,7 +41,15 @@ Page({
       })
       return
     }
-    console.log(this.data)
+    loginService.login(this.data).then(res => {
+      if (res.code == 200) {
+        wx.setStorageSync('username', this.data.username)
+        wx.setStorageSync('password', this.data.password)
+        wx.switchTab({
+          url: '/pages/index/index',
+        })
+      }
+    })
   },
   /**
    * 注册
@@ -50,7 +60,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      username: wx.getStorageSync('username') || '',
+      password: wx.getStorageSync('password') || '',
+    })
   },
 
   /**

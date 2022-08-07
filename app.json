@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/regist/regist",
     "pages/index/index",
     "pages/user/user",
     "pages/detail/detail",
@@ -9,9 +11,7 @@
     "pages/more/more",
     "pages/mydetail/mydetail",
     "pages/record/record",
-    "pages/message/message",
-    "pages/login/login",
-    "pages/regist/regist"
+    "pages/message/message"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,8 +20,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "",
         "iconPath": "images/icons/home.png",
